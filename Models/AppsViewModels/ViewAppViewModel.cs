@@ -61,7 +61,7 @@ namespace Developer.Models.AppsViewModels
         {
             if (ThisApp.CreaterId != User.Id)
             {
-                throw new AiurCrossAuthorityException("The app is not the user's app!");
+                throw new InvalidOperationException("The app is not the user's app!");
             }
             this.AppName = ThisApp.AppName;
             this.AppDescription = ThisApp.AppDescription;
