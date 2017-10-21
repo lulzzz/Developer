@@ -6,7 +6,6 @@ using AiursoftBase.Models.Developer.ApiAddressModels;
 using AiursoftBase.Models.Developer.ApiViewModels;
 using Developer.Data;
 using Developer.Models;
-using Developer.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -18,27 +17,21 @@ namespace Developer.Controllers
 {
     [AiurRequireHttps]
     [AiurExceptionHandler]
-    public class ApiController : AiurController
+    public class ApiController : AiurApiController
     {
         public readonly UserManager<DeveloperUser> _userManager;
         public readonly SignInManager<DeveloperUser> _signInManager;
-        public readonly IEmailSender _emailSender;
-        public readonly ISmsSender _smsSender;
         public readonly ILogger _logger;
         public DeveloperDbContext _dbContext;
 
         public ApiController(
         UserManager<DeveloperUser> userManager,
         SignInManager<DeveloperUser> signInManager,
-        IEmailSender emailSender,
-        ISmsSender smsSender,
         ILoggerFactory loggerFactory,
         DeveloperDbContext _context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
-            _emailSender = emailSender;
-            _smsSender = smsSender;
             _logger = loggerFactory.CreateLogger<ApiController>();
             _dbContext = _context;
         }

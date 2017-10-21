@@ -11,10 +11,12 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Developer.Data;
 using Developer.Models;
-using Developer.Services;
 using AiursoftBase;
 using AiursoftBase.Models.Developer;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Razor;
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
 
 namespace Developer
 {
@@ -39,13 +41,26 @@ namespace Developer
             services.AddIdentity<DeveloperUser, IdentityRole>()
                 .AddEntityFrameworkStores<DeveloperDbContext>()
                 .AddDefaultTokenProviders();
-            services.AddMvc();
-            services.AddTransient<IEmailSender, AuthMessageSender>();
-            services.AddTransient<ISmsSender, AuthMessageSender>();
+
+            services.AddLocalization(options => options.ResourcesPath = "Resources");
+
+            services.AddMvc()
+                .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix);
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, DeveloperDbContext dbContext)
         {
+            var SupportedCultures = new CultureInfo[]
+            {
+                new CultureInfo("en"),
+                new CultureInfo("zh")
+            };
+            app.UseRequestLocalization(new RequestLocalizationOptions
+            {
+                DefaultRequestCulture = new RequestCulture("en"),
+                SupportedCultures = SupportedCultures,
+                SupportedUICultures = SupportedCultures
+            });
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
