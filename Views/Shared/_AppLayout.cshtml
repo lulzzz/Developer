@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>@ViewData["Title"] - Apps Management</title>
+    <title>@Localizer[ViewData["Title"].ToString()] - @Localizer["Developer Center"]</title>
 
     <environment names="Development">
         <link rel="stylesheet" href="@Values.CdnServerAddress/lib/bootstrap/dist/css/bootstrap.css">
@@ -52,7 +52,7 @@
         </header>
         <div class="content">
             <div class="navigation">
-                <h5 class="title">Apps</h5>
+                <h5 class="title">@Localizer["Apps"]</h5>
                 <ul class="menu js__accordion">
                     <li class="@(Model.ActivePanel == 0 ? "current":string.Empty)">
                         <a class="waves-effect" asp-controller="Apps" asp-action="Index"><i class="menu-icon mdi mdi-server-network"></i><span>Dashboard</span></a>
