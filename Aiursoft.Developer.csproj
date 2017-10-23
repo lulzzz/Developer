@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Version>0.1.1</Version>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-    <AssemblyName>Developer</AssemblyName>
+    <AssemblyName>Aiursoft.Developer</AssemblyName>
     <PackageId>Aiursoft.Developer</PackageId>
     <Company>Aiursoft</Company>
     <Product>AiursoftWeb</Product>
