@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using Developer.Data;
+using Aiursoft.Developer.Data;
 using Aiursoft.Pylon.Models;
 
-namespace Developer.Data.Migrations
+namespace Aiursoft.Developer.Data.Migrations
 {
     [DbContext(typeof(DeveloperDbContext))]
     [Migration("20170305105938_CreateAppDomain")]

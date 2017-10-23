@@ -1,12 +1,12 @@
 ﻿using Aiursoft.Pylon.Models.Developer;
-using Developer.Models.AppsViewModels;
+using Aiursoft.Developer.Models.AppsViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Developer.Models.BucketViewModels
+namespace Aiursoft.Developer.Models.BucketViewModels
 {
     public class DeleteBucketViewModel : AppLayoutModel
     {

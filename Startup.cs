@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Developer.Data;
-using Developer.Models;
+using Aiursoft.Developer.Data;
+using Aiursoft.Developer.Models;
 using Aiursoft.Pylon;
 using Aiursoft.Pylon.Models.Developer;
 using Microsoft.AspNetCore.Identity;
@@ -18,7 +18,7 @@ using Microsoft.AspNetCore.Mvc.Razor;
 using System.Globalization;
 using Microsoft.AspNetCore.Localization;
 
-namespace Developer
+namespace Aiursoft.Developer
 {
     public class Startup
     {

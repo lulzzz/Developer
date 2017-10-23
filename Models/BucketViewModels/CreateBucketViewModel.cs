@@ -1,4 +1,4 @@
-﻿using Developer.Models.AppsViewModels;
+﻿using Aiursoft.Developer.Models.AppsViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Aiursoft.Pylon.Attributes;
 using Aiursoft.Pylon.Models.Developer;
 
-namespace Developer.Models.BucketViewModels
+namespace Aiursoft.Developer.Models.BucketViewModels
 {
     public class CreateBucketViewModel : AppLayoutModel
     {

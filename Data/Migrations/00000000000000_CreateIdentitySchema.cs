@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Developer.Data.Migrations
+namespace Aiursoft.Developer.Data.Migrations
 {
     public partial class CreateIdentitySchema : Migration
     {

@@ -1,6 +1,6 @@
 ﻿using Aiursoft.Pylon.Models.Developer;
 using Aiursoft.Pylon.Models.OSS;
-using Developer.Models.AppsViewModels;
+using Aiursoft.Developer.Models.AppsViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
@@ -9,7 +9,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Developer.Models.FilesViewModels
+namespace Aiursoft.Developer.Models.FilesViewModels
 {
     public class UploadFileViewModel : AppLayoutModel
     {

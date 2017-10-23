@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace Developer
+namespace Aiursoft.Developer
 {
     public class Program
     {

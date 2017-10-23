@@ -4,12 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Developer.Models;
+using Aiursoft.Developer.Models;
 using Aiursoft.Pylon.Models;
 using Microsoft.AspNetCore.Builder;
 using Aiursoft.Pylon.Models.Developer;
 
-namespace Developer.Data
+namespace Aiursoft.Developer.Data
 {
     public class DeveloperDbContext : IdentityDbContext<DeveloperUser>
     {

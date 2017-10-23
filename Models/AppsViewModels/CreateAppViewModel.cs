@@ -3,7 +3,7 @@ using Aiursoft.Pylon.Models.Developer;
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Developer.Models.AppsViewModels
+namespace Aiursoft.Developer.Models.AppsViewModels
 {
     public class CreateAppViewModel : AppLayoutModel
     {

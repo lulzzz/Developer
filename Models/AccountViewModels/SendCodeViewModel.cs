@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace Developer.Models.AccountViewModels
+namespace Aiursoft.Developer.Models.AccountViewModels
 {
     public class SendCodeViewModel
     {

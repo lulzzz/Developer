@@ -5,9 +5,9 @@ using Aiursoft.Pylon.Models;
 using Aiursoft.Pylon.Models.Developer;
 using Aiursoft.Pylon.Models.OSS;
 using Aiursoft.Pylon.Services.ToOSSServer;
-using Developer.Data;
-using Developer.Models;
-using Developer.Models.BucketViewModels;
+using Aiursoft.Developer.Data;
+using Aiursoft.Developer.Models;
+using Aiursoft.Developer.Models.BucketViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -18,7 +18,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Developer.Controllers
+namespace Aiursoft.Developer.Controllers
 {
     [AiurForceAuth]
     [AiurExceptionHandler]

@@ -1,8 +1,8 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
-using Developer.Models;
-using Developer.Data;
+using Aiursoft.Developer.Models;
+using Aiursoft.Developer.Data;
 using Aiursoft.Pylon.Services;
 using Aiursoft.Pylon.Attributes;
 using System;
@@ -11,7 +11,7 @@ using Aiursoft.Pylon.Models.ForApps.AddressModels;
 using Aiursoft.Pylon;
 using Aiursoft.Pylon.Models.Developer;
 
-namespace Developer.Controllers
+namespace Aiursoft.Developer.Controllers
 {
     [AiurExceptionHandler]
     [AiurRequireHttps]

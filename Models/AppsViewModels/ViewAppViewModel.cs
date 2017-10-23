@@ -9,11 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Aiursoft.Pylon.Services.ToOSSServer;
 using Aiursoft.Pylon.Models.API;
-using Developer.Data;
+using Aiursoft.Developer.Data;
 using Microsoft.EntityFrameworkCore;
 using Aiursoft.Pylon.Models.Developer;
 
-namespace Developer.Models.AppsViewModels
+namespace Aiursoft.Developer.Models.AppsViewModels
 {
     public class ViewAppViewModel : CreateAppViewModel
     {

@@ -2,9 +2,9 @@
 using Aiursoft.Pylon.Attributes;
 using Aiursoft.Pylon.Models;
 using Aiursoft.Pylon.Services.ToOSSServer;
-using Developer.Data;
-using Developer.Models;
-using Developer.Models.FilesViewModels;
+using Aiursoft.Developer.Data;
+using Aiursoft.Developer.Models;
+using Aiursoft.Developer.Models.FilesViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 using Aiursoft.Pylon.Services;
 using Aiursoft.Pylon.Models.Developer;
 
-namespace Developer.Controllers
+namespace Aiursoft.Developer.Controllers
 {
     [AiurForceAuth]
     [AiurExceptionHandler]

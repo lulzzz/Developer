@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
-using Developer.Models;
+using Aiursoft.Developer.Models;
 
-namespace Developer.Data.Migrations
+namespace Aiursoft.Developer.Data.Migrations
 {
     public partial class migrateApp : Migration
     {

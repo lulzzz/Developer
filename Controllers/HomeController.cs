@@ -2,13 +2,13 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
-using Developer.Models;
+using Aiursoft.Developer.Models;
 using Aiursoft.Pylon.Attributes;
 using Aiursoft.Pylon;
 using Aiursoft.Pylon.Models.Developer;
 using Aiursoft.Pylon.Models;
 
-namespace Developer.Controllers
+namespace Aiursoft.Developer.Controllers
 {
     [AiurExceptionHandler]
     [AiurRequireHttps]

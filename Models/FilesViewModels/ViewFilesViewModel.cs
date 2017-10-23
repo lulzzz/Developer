@@ -2,13 +2,13 @@
 using Aiursoft.Pylon.Models.Developer;
 using Aiursoft.Pylon.Models.OSS;
 using Aiursoft.Pylon.Models.OSS.ApiViewModels;
-using Developer.Models.AppsViewModels;
+using Aiursoft.Developer.Models.AppsViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Developer.Models.FilesViewModels
+namespace Aiursoft.Developer.Models.FilesViewModels
 {
     public class ViewFilesViewModel : AppLayoutModel
     {

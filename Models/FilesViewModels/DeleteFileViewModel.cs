@@ -1,12 +1,12 @@
 ﻿using Aiursoft.Pylon.Models.Developer;
-using Developer.Models.AppsViewModels;
+using Aiursoft.Developer.Models.AppsViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Developer.Models.FilesViewModels
+namespace Aiursoft.Developer.Models.FilesViewModels
 {
     public class DeleteFileViewModel : AppLayoutModel
     {

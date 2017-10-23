@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Developer.Models.ManageViewModels
+namespace Aiursoft.Developer.Models.ManageViewModels
 {
     public class FactorViewModel
     {

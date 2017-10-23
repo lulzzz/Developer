@@ -1,12 +1,12 @@
 ﻿using Aiursoft.Pylon.Models.Developer;
 using Aiursoft.Pylon.Models.OSS;
-using Developer.Models.AppsViewModels;
+using Aiursoft.Developer.Models.AppsViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Developer.Models.BucketViewModels
+namespace Aiursoft.Developer.Models.BucketViewModels
 {
     public class IndexViewModel : AppLayoutModel
     {

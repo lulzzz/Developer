@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Developer.Models.BucketViewModels
+namespace Aiursoft.Developer.Models.BucketViewModels
 {
     public class EditBucketViewModel : CreateBucketViewModel
     {
