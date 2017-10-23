@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Developer.Data;
-using AiursoftBase.Models;
+using Aiursoft.Pylon.Models;
 
 namespace Developer.Data.Migrations
 {
@@ -18,7 +18,7 @@ namespace Developer.Data.Migrations
                 .HasAnnotation("ProductVersion", "1.1.0-rtm-22752")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("AiursoftBase.Models.Permission", b =>
+            modelBuilder.Entity("Aiursoft.Pylon.Models.Permission", b =>
                 {
                     b.Property<int>("PermissionId")
                         .ValueGeneratedOnAdd();
@@ -272,7 +272,7 @@ namespace Developer.Data.Migrations
                         .WithMany("Permissions")
                         .HasForeignKey("AppId");
 
-                    b.HasOne("AiursoftBase.Models.Permission", "Permission")
+                    b.HasOne("Aiursoft.Pylon.Models.Permission", "Permission")
                         .WithMany()
                         .HasForeignKey("PermissionId")
                         .OnDelete(DeleteBehavior.Cascade);

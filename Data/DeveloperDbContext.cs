@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Developer.Models;
-using AiursoftBase.Models;
+using Aiursoft.Pylon.Models;
 using Microsoft.AspNetCore.Builder;
-using AiursoftBase.Models.Developer;
+using Aiursoft.Pylon.Models.Developer;
 
 namespace Developer.Data
 {

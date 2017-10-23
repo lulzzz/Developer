@@ -6,8 +6,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc;
-using AiursoftBase.Attributes;
-using AiursoftBase.Models.Developer;
+using Aiursoft.Pylon.Attributes;
+using Aiursoft.Pylon.Models.Developer;
 
 namespace Developer.Models.BucketViewModels
 {

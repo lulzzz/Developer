@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Developer.Data;
-using AiursoftBase.Models;
+using Aiursoft.Pylon.Models;
 
 namespace Developer.Data.Migrations
 {
@@ -18,7 +18,7 @@ namespace Developer.Data.Migrations
                 .HasAnnotation("ProductVersion", "1.1.0-rtm-22752")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("AiursoftBase.Models.Developer.App", b =>
+            modelBuilder.Entity("Aiursoft.Pylon.Models.Developer.App", b =>
                 {
                     b.Property<string>("AppId")
                         .ValueGeneratedOnAdd();
@@ -60,7 +60,7 @@ namespace Developer.Data.Migrations
                     b.ToTable("Apps");
                 });
 
-            modelBuilder.Entity("AiursoftBase.Models.Developer.AppPermission", b =>
+            modelBuilder.Entity("Aiursoft.Pylon.Models.Developer.AppPermission", b =>
                 {
                     b.Property<int>("AppPermissionId")
                         .ValueGeneratedOnAdd();
@@ -78,7 +78,7 @@ namespace Developer.Data.Migrations
                     b.ToTable("AppPermissions");
                 });
 
-            modelBuilder.Entity("AiursoftBase.Models.Developer.DeveloperUser", b =>
+            modelBuilder.Entity("Aiursoft.Pylon.Models.Developer.DeveloperUser", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
@@ -138,7 +138,7 @@ namespace Developer.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("AiursoftBase.Models.Developer.Permission", b =>
+            modelBuilder.Entity("Aiursoft.Pylon.Models.Developer.Permission", b =>
                 {
                     b.Property<int>("PermissionId")
                         .ValueGeneratedOnAdd();
@@ -259,20 +259,20 @@ namespace Developer.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("AiursoftBase.Models.Developer.App", b =>
+            modelBuilder.Entity("Aiursoft.Pylon.Models.Developer.App", b =>
                 {
-                    b.HasOne("AiursoftBase.Models.Developer.DeveloperUser", "Creater")
+                    b.HasOne("Aiursoft.Pylon.Models.Developer.DeveloperUser", "Creater")
                         .WithMany("MyApps")
                         .HasForeignKey("CreaterId");
                 });
 
-            modelBuilder.Entity("AiursoftBase.Models.Developer.AppPermission", b =>
+            modelBuilder.Entity("Aiursoft.Pylon.Models.Developer.AppPermission", b =>
                 {
-                    b.HasOne("AiursoftBase.Models.Developer.App", "App")
+                    b.HasOne("Aiursoft.Pylon.Models.Developer.App", "App")
                         .WithMany("Permissions")
                         .HasForeignKey("AppId");
 
-                    b.HasOne("AiursoftBase.Models.Developer.Permission", "Permission")
+                    b.HasOne("Aiursoft.Pylon.Models.Developer.Permission", "Permission")
                         .WithMany()
                         .HasForeignKey("PermissionId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -288,7 +288,7 @@ namespace Developer.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("AiursoftBase.Models.Developer.DeveloperUser")
+                    b.HasOne("Aiursoft.Pylon.Models.Developer.DeveloperUser")
                         .WithMany("Claims")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -296,7 +296,7 @@ namespace Developer.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("AiursoftBase.Models.Developer.DeveloperUser")
+                    b.HasOne("Aiursoft.Pylon.Models.Developer.DeveloperUser")
                         .WithMany("Logins")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -309,7 +309,7 @@ namespace Developer.Data.Migrations
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("AiursoftBase.Models.Developer.DeveloperUser")
+                    b.HasOne("Aiursoft.Pylon.Models.Developer.DeveloperUser")
                         .WithMany("Roles")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);

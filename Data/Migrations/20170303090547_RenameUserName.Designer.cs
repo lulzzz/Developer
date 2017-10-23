@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Developer.Data;
-using AiursoftBase.Models;
+using Aiursoft.Pylon.Models;
 
 namespace Developer.Data.Migrations
 {

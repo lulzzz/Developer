@@ -1,7 +1,7 @@
-﻿using AiursoftBase;
-using AiursoftBase.Attributes;
-using AiursoftBase.Models;
-using AiursoftBase.Services.ToOSSServer;
+﻿using Aiursoft.Pylon;
+using Aiursoft.Pylon.Attributes;
+using Aiursoft.Pylon.Models;
+using Aiursoft.Pylon.Services.ToOSSServer;
 using Developer.Data;
 using Developer.Models;
 using Developer.Models.FilesViewModels;
@@ -12,8 +12,8 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using AiursoftBase.Services;
-using AiursoftBase.Models.Developer;
+using Aiursoft.Pylon.Services;
+using Aiursoft.Pylon.Models.Developer;
 
 namespace Developer.Controllers
 {
