@@ -23,7 +23,7 @@
                 <a asp-controller="Apps" asp-action="ViewApp" asp-route-id="@app.AppId" class="prj-item">
                     <div class="top-project-section">
                         <div class="project-icon">
-                            <img style="width:100px;height:100px;" class="img-circle" src="@app.AppIconAddress">
+                            <img style="width:100px;height:100px;" class="img-circle" src="@(app.AppIconAddress)?w=100&h=100">
                         </div>
                         <h3>@Html.DisplayFor(t => app.AppName)</h3>
                         <div class="meta">

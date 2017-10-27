@@ -34,7 +34,7 @@
             <button type="button" class="button-close fa fa-times js__menu_close"></button>
             <div class="user">
                 <a href="@(new AiurUrl(Values.AccountServerAddress,"Account","Avatar",new { }))" class="avatar">
-                    <img src="@Model.UserIconImageAddress" alt="">
+                    <img src="@(Model.UserIconImageAddress)?w=100&h=100" alt="">
                     <span class="status online"></span>
                 </a>
                 <h5 class="name"><a href="profile.html">@Html.DisplayFor(t => Model.NickName)</a></h5>
