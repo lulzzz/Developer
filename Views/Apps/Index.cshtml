@@ -4,10 +4,10 @@
     Layout = "_AppLayout";
 }
 @section css{
-    <link rel="stylesheet" href="@Values.CdnServerAddress/lib/chartist/dist/chartist.min.css">
+    <link rel="stylesheet" href="@Values.CdnServerAddress/node_modules/chartist/dist/chartist.min.css">
 }
 @section js{
-    <script src="@Values.CdnServerAddress/lib/chartist/dist/chartist.min.js"></script>
+    <script src="@Values.CdnServerAddress/node_modules/chartist/dist/chartist.min.js"></script>
     <script>
         new Chartist.Line('.chartist-chart', {
             labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],

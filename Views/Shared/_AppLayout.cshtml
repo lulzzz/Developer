@@ -10,14 +10,14 @@
     <title>@Localizer[ViewData["Title"].ToString()] - @Localizer["Developer Center"]</title>
 
     <environment names="Development">
-        <link rel="stylesheet" href="@Values.CdnServerAddress/lib/bootstrap/dist/css/bootstrap.css">
-        <link rel="stylesheet" href="@Values.CdnServerAddress/lib/font-awesome/css/font-awesome.css">
-        <link rel="stylesheet" href="@Values.CdnServerAddress/lib/nprogress/nprogress.css">
-        <link rel="stylesheet" href="@Values.CdnServerAddress/lib/mdi/css/materialdesignicons.css">
-        <link rel="stylesheet" href="@Values.CdnServerAddress/lib/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
-        <link rel="stylesheet" href="@Values.CdnServerAddress/lib/Waves/dist/waves.css">
-        <link rel="stylesheet" href="@Values.CdnServerAddress/lib/sweetalert/dist/sweetalert.css">
-        <link rel="stylesheet" href="@Values.CdnServerAddress/lib/dropify/dist/css/dropify.css">
+        <link rel="stylesheet" href="@Values.CdnServerAddress/node_modules/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="@Values.CdnServerAddress/node_modules/font-awesome/css/font-awesome.css">
+        <link rel="stylesheet" href="@Values.CdnServerAddress/node_modules/nprogress/nprogress.css">
+        <link rel="stylesheet" href="@Values.CdnServerAddress/node_modules/mdi/css/materialdesignicons.css">
+        <link rel="stylesheet" href="@Values.CdnServerAddress/node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+        <link rel="stylesheet" href="@Values.CdnServerAddress/node_modules/node-waves/dist/waves.css">
+        <link rel="stylesheet" href="@Values.CdnServerAddress/node_modules/sweetalert/dist/sweetalert.css">
+        <link rel="stylesheet" href="@Values.CdnServerAddress/node_modules/dropify/dist/css/dropify.css">
         <link rel="stylesheet" href="@Values.CdnServerAddress/css/dashboard.css">
     </environment>
     <environment names="Staging,Production">
@@ -270,16 +270,16 @@
     </div>
     @RenderSection("modal", required: false)
     <environment names="Development">
-        <script src="@Values.CdnServerAddress/lib/jquery/dist/jquery.js"></script>
+        <script src="@Values.CdnServerAddress/node_modules/jquery/dist/jquery.js"></script>
         <script src="@Values.CdnServerAddress/js/modernizr.js"></script>
-        <script src="@Values.CdnServerAddress/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="@Values.CdnServerAddress/lib/jquery-mousewheel/jquery.mousewheel.js"></script>
-        <script src="@Values.CdnServerAddress/lib/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js"></script>
-        <script src="@Values.CdnServerAddress/lib/nprogress/nprogress.js"></script>
-        <script src="@Values.CdnServerAddress/lib/sweetalert/dist/sweetalert-dev.js"></script>
-        <script src="@Values.CdnServerAddress/lib/Waves/dist/waves.js"></script>
-        <script src="@Values.CdnServerAddress/lib/datatables/media/js/jquery.dataTables.js"></script>
-        <script src="@Values.CdnServerAddress/lib/dropify/dist/js/dropify.js"></script>
+        <script src="@Values.CdnServerAddress/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="@Values.CdnServerAddress/node_modules/jquery-mousewheel/jquery.mousewheel.js"></script>
+        <script src="@Values.CdnServerAddress/node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js"></script>
+        <script src="@Values.CdnServerAddress/node_modules/nprogress/nprogress.js"></script>
+        <script src="@Values.CdnServerAddress/node_modules/sweetalert/dist/sweetalert-dev.js"></script>
+        <script src="@Values.CdnServerAddress/node_modules/node-waves/dist/waves.js"></script>
+        <script src="@Values.CdnServerAddress/node_modules/datatables/media/js/jquery.dataTables.js"></script>
+        <script src="@Values.CdnServerAddress/node_modules/dropify/dist/js/dropify.js"></script>
         <script src="@Values.CdnServerAddress/js/dashboard.js"></script>
     </environment>
     <environment names="Staging,Production">
