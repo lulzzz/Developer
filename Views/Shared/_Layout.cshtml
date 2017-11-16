@@ -8,388 +8,83 @@
     <meta name="author" content="">
     <title>@ViewData["Title"] - @Values.ProjectName Developer Center</title>
     <environment names="Development">
-        <link rel="stylesheet" href="@Values.CdnServerAddress/lib/bootstrap/dist/css/bootstrap.css">
-        <link rel="stylesheet" href="@Values.CdnServerAddress/lib/nivo-slider/nivo-slider.css">
-        <link rel="stylesheet" href="@Values.CdnServerAddress/lib/material-design-iconic-font/dist/css/material-design-iconic-font.css">
-        <link rel="stylesheet" href="@Values.CdnServerAddress/lib/animate.css/animate.css">
-        <link rel="stylesheet" href="@Values.CdnServerAddress/lib/jquery-ui/themes/base/core.css">
-        <link rel="stylesheet" href="@Values.CdnServerAddress/lib/jquery-ui/themes/base/slider.css">
-        <link rel="stylesheet" href="@Values.CdnServerAddress/lib/jquery-ui/themes/base/theme.css">
-        <link rel="stylesheet" href="@Values.CdnServerAddress/css/plugins/myMenumenu.css">
-        <link rel="stylesheet" href="@Values.CdnServerAddress/lib/fancybox/source/jquery.fancybox.css">
-        <link rel="stylesheet" href="@Values.CdnServerAddress/lib/jquery.mb.ytplayer/dist/css/jquery.mb.YTPlayer.min.css">
-        <link rel="stylesheet" href="@Values.CdnServerAddress/lib/slick-carousel/slick/slick.css">
-        <link rel="stylesheet" href="@Values.CdnServerAddress/css/textanimate.css">
-        <link rel="stylesheet" href="@Values.CdnServerAddress/css/shortcode/default.css">
-        <link rel="stylesheet" href="@Values.CdnServerAddress/css/shortcode/header.css">
-        <link rel="stylesheet" href="@Values.CdnServerAddress/css/shortcode/slider.css">
-        <link rel="stylesheet" href="@Values.CdnServerAddress/css/shortcode/footer.css">
-        <link rel="stylesheet" href="@Values.CdnServerAddress/css/style.css">
-        <link rel="stylesheet" href="@Values.CdnServerAddress/css/responsive.css">
-        <link rel="stylesheet" href="@Values.CdnServerAddress/css/color/skin-default.css" data-style="styles">
+        <link href="@Values.CdnServerAddress/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="@Values.CdnServerAddress/node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="@Values.CdnServerAddress/css/AiurUI.css" rel="stylesheet">
     </environment>
-    <environment names="Staging,Production">
-        <link rel="stylesheet" href="@Values.CdnServerAddress/dist/AiurUI.min.css" asp-append-version="true">
+    <environment exclude="Development">
+        <link href="@Values.CdnServerAddress/dist/AiurUI.min.css" rel="stylesheet" asp-append-version="true">
     </environment>
 </head>
 <body>
-    <header class="header-area header-wrapper">
-        <div class="header-top-bar plr-185">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-6 hidden-xs">
-                        <div class="call-us">
-                            <p class="mb-0 roboto">@Values.CorpPhoneNumber</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xs-12">
-                        <div class="top-link clearfix">
-                            <ul class="link f-right">
-                                <li>
-                                    <a href="wishlist.html">
-                                        <i class="zmdi zmdi-favorite"></i>
-                                        Wish List (0)
-                                    </a>
-                                </li>
-                                <li>
-                                    @if (!SignInManager.IsSignedIn(User))
-                                    {
-                                        <a asp-controller="Auth" asp-action="GoAuth">
-                                            <i class="zmdi zmdi-lock"></i>
-                                            Login
-                                        </a>
-                                    }
-                                    else
-                                    {
-                                        <a href="@Values.AccountServerAddress">
-                                            <i class="zmdi zmdi-account-circle"></i>
-                                            Your Profile
-                                        </a>
-
-                                    }
-                                </li>
-                                @if (SignInManager.IsSignedIn(User))
-                                {
-                                    <li>
-                                        <a href="javascript:$('#logoutForm').submit()">
-                                            <i class="zmdi zmdi-lock-open"></i>
-                                            Sign Out
-                                        </a>
-                                    </li>
-                                }
-                            </ul>
-                            <form class="hidden" asp-controller="Home" asp-action="LogOff" method="post" id="logoutForm"></form>
-                        </div>
-                    </div>
-                </div>
+    <div class="container">
+        <div class="navbar navbar-default">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-target=".navbar-collapse" data-toggle="collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand hidden-md hidden-sm" href="/">Aiursoft Developer Center</a>
             </div>
-        </div>
-        <div id="sticky-header" class="header-middle-area plr-185">
-            <div class="container-fluid">
-                <div class="full-width-mega-dropdown">
-                    <div class="row">
-                        <div class="col-md-2 col-sm-6 col-xs-12">
-                            <div class="logo">
-                                <a href="index.html">
-                                    <img src="~/img/logo/logo.png" alt="main logo">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-8 hidden-sm hidden-xs">
-                            <nav id="primary-menu">
-                                <ul class="main-menu text-center">
-                                    <li>
-                                        <a href="about.html">Home</a>
-                                    </li>
-                                    <li class="mega-parent">
-                                        <a href="#">Explore</a>
-                                        <div class="mega-menu-area clearfix">
-                                            <div class="mega-menu-link mega-menu-link-4  f-left">
-                                                <ul class="single-mega-item">
-                                                    <li class="menu-title">Collections</li>
-                                                    <li>
-                                                        <a href="elements-header-1-sticky.html">Products</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="elements-header-1-no-sticky.html">Organizations</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="elements-header-1-sticky.html">Courses</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="elements-header-1-sticky.html">Examples</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="elements-header-1-sticky.html">Templetes</a>
-                                                    </li>
-                                                </ul>
-                                                <ul class="single-mega-item">
-                                                    <li class="menu-title">@Values.ProjectName</li>
-                                                    <li>
-                                                        <a href="elements-featured-product-1.html">Status</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="@Values.DeveloperServerAddress">Develope</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="@Values.WikiServerAddress">Wiki</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li>
-                                        <a href="about.html">About</a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                        <!-- header-search & total-cart -->
-                        <div class="col-md-2 col-sm-6 col-xs-12">
-                            <div class="search-top-cart  f-right">
-                                <!-- header-search -->
-                                <div class="header-search f-left">
-                                    <div class="header-search-inner">
-                                        <button class="search-toggle">
-                                            <i class="zmdi zmdi-search"></i>
-                                        </button>
-                                        <form action="#">
-                                            <div class="top-search-box">
-                                                <input type="text" placeholder="Search here your product...">
-                                                <button type="submit">
-                                                    <i class="zmdi zmdi-search"></i>
-                                                </button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                                <!-- total-cart -->
-                                <div class="total-cart f-left">
-                                    <div class="total-cart-in">
-                                        <div class="cart-toggler">
-                                            <a href="#">
-                                                <span class="cart-quantity"></span><br>
-                                                <span class="cart-icon">
-                                                    <i class="zmdi zmdi-plus-circle"></i>
-                                                </span>
-                                            </a>
-                                        </div>
-                                        <ul>
-                                            <li>
-                                                <div class="top-cart-inner your-cart">
-                                                    <h5 class="text-capitalize">Create</h5>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="top-cart-inner check-out">
-                                                    <h4 class="text-uppercase">
-                                                        <a href="#">Product</a>
-                                                    </h4>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="top-cart-inner view-cart">
-                                                    <h4 class="text-uppercase">
-                                                        <a href="#">Organization</a>
-                                                    </h4>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="top-cart-inner check-out">
-                                                    <h4 class="text-uppercase">
-                                                        <a href="#">Courses</a>
-                                                    </h4>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="top-cart-inner check-out">
-                                                    <h4 class="text-uppercase">
-                                                        <a href="#">Examples</a>
-                                                    </h4>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="top-cart-inner check-out">
-                                                    <h4 class="text-uppercase">
-                                                        <a href="#">Templetes</a>
-                                                    </h4>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/">News</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        @if (!SignInManager.IsSignedIn(User))
+                        {
+                            <a asp-controller="Auth" asp-action="GoAuth">
+                                <i class="fa fa-lock"></i>
+                                Login
+                            </a>
+                        }
+                        else
+                        {
+                            <a href="@Values.AccountServerAddress">
+                                <i class="fa fa-user-o"></i>
+                                Your Profile
+                            </a>
+                        }
+                    </li>
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        <li>
+                            <a href="javascript:$('#logoutForm').submit()">
+                                <i class="fa fa-unlock"></i>
+                                Sign Out
+                            </a>
+                        </li>
+                    }
+                </ul>
             </div>
+            <form class="hidden" asp-controller="Home" asp-action="LogOff" method="post" id="logoutForm"></form>
         </div>
-    </header>
-    <div class="mobile-menu-area hidden-lg hidden-md">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="mobile-menu">
-                        <nav id="dropdown">
-                            <ul>
-                                <li>
-                                    <a href="index.html">Home</a>
-                                    <ul>
-                                        <li>
-                                            <a href="index.html">Home Version 1</a>
-                                        </li>
-                                        <li>
-                                            <a href="index-2.html">Home Version 2</a>
-                                        </li>
-                                        <li>
-                                            <a href="index-3.html">Home Version 3</a>
-                                        </li>
-                                        <li>
-                                            <a href="index-4.html">Home 4 Animated Text</a>
-                                        </li>
-                                        <li>
-                                            <a href="index-5.html">Home 5 Animated Text Ovlerlay</a>
-                                        </li>
-                                        <li>
-                                            <a href="index-6.html">Home 6 Background Video</a>
-                                        </li>
-                                        <li>
-                                            <a href="index-7.html">Home 7 BG-Video Ovlerlay</a>
-                                        </li>
-                                        <li>
-                                            <a href="index-8.html">Home 8 Boxed-1</a>
-                                        </li>
-                                        <li>
-                                            <a href="index-9.html">Home 9 Gradient</a>
-                                        </li>
-                                        <li>
-                                            <a href="index-10.html">Home 10 Boxed-2</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="shop.html">Products</a>
-                                </li>
-                                <li>
-                                    <a href="#">Pages</a>
-                                    <ul>
-                                        <li>
-                                            <a href="shop.html">Shop</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar.html">Shop Left Sidebar</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-right-sidebar.html">Shop Right Sidebar</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-list.html">Shop List</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-list-right-sidebar.html">Shop List Right Sidebar</a>
-                                        </li>
-                                        <li>
-                                            <a href="single-product.html">Single Product</a>
-                                        </li>
-                                        <li>
-                                            <a href="single-product-left-sidebar.html">Single Product Left Sidebar</a>
-                                        </li>
-                                        <li>
-                                            <a href="single-product-no-sidebar.html">Single Product No Sidebar</a>
-                                        </li>
-                                        <li>
-                                            <a href="cart.html">Shopping Cart</a>
-                                        </li>
-                                        <li>
-                                            <a href="wishlist.html">Wishlist</a>
-                                        </li>
-                                        <li>
-                                            <a href="checkout.html">Checkout</a>
-                                        </li>
-                                        <li>
-                                            <a href="order.html">Order</a>
-                                        </li>
-                                        <li>
-                                            <a href="login.html">Login</a>
-                                        </li>
-                                        <li>
-                                            <a href="My-account.html">My Account</a>
-                                        </li>
-                                        <li>
-                                            <a href="about.html">About us</a>
-                                        </li>
-                                        <li>
-                                            <a href="404.html">404</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="blog.html">Blog</a>
-                                    <ul>
-                                        <li>
-                                            <a href="blog.html">Blog</a>
-                                        </li>
-                                        <li>
-                                            <a href="blog-left-sidebar.html">Blog Left Sidebar</a>
-                                        </li>
-                                        <li>
-                                            <a href="blog-right-sidebar.html">Blog Right Sidebar</a>
-                                        </li>
-                                        <li>
-                                            <a href="blog-2.html">Blog style 2</a>
-                                        </li>
-                                        <li>
-                                            <a href="blog-2-left-sidebar.html">Blog 2 Left Sidebar</a>
-                                        </li>
-                                        <li>
-                                            <a href="blog-2-right-sidebar.html">Blog 2 Right Sidebar</a>
-                                        </li>
-                                        <li>
-                                            <a href="blog-details.html">Blog Details</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="about.html">About Us</a>
-                                </li>
-                                <li>
-                                    <a href="contact.html">Contact</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="wrapper">
         @RenderBody()
-        @{
-            await Html.RenderPartialAsync("_homeFooter");
-        }
-        @RenderSection("Modal", required: false)
+        <footer>
+            <ul>
+                <li>&copy; 2017 - @Values.ProjectName</li>
+                <li>
+                    <a href="@(new AiurUrl(Values.ApiServerAddress, "Api", "SetLang", new
+                 {
+                     Host = $"{Context.Request.Scheme}://{Context.Request.Host}",
+                     Path = Context.Request.Path
+                 }))">Language</a>
+                </li>
+            </ul>
+        </footer>
     </div>
-
     <environment names="Development">
-        <script src="@Values.CdnServerAddress/js/modernizr.js"></script>
-        <script src="@Values.CdnServerAddress/lib/jquery/dist/jquery.js"></script>
-        <script src="@Values.CdnServerAddress/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="@Values.CdnServerAddress/lib/nivo-slider/jquery.nivo.slider.js"></script>
-        <script src="@Values.CdnServerAddress/lib/scrollup/dist/jquery.scrollUp.js"></script>
-        <script src="@Values.CdnServerAddress/lib/slick-carousel/slick/slick.js"></script>
-        <script src="@Values.CdnServerAddress/lib/jquery-ui/jquery-ui.js"></script>
-        <script src="@Values.CdnServerAddress/lib/wow/dist/wow.js"></script>
-        <script src="@Values.CdnServerAddress/lib/jquery.meanmenu/jquery.meanmenu.js"></script>
-        <script src="@Values.CdnServerAddress/lib/jquery.countdown/dist/jquery.countdown.js"></script>
-        <script src="@Values.CdnServerAddress/lib/jquery-treeview/jquery.treeview.js"></script>
-        <script src="@Values.CdnServerAddress/lib/fancybox/source/jquery.fancybox.js"></script>
-        <script src="@Values.CdnServerAddress/lib/elevatezoom/jquery.elevatezoom.js"></script>
-        <script src="@Values.CdnServerAddress/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js"></script>
-        <script src="@Values.CdnServerAddress/js/textillate.js"></script>
+        <script src="@Values.CdnServerAddress/node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="@Values.CdnServerAddress/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="@Values.CdnServerAddress/node_modules/jquery-validation/dist/jquery.validate.js"></script>
+        <script src="@Values.CdnServerAddress/node_modules/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
         <script src="@Values.CdnServerAddress/js/AiurUI.js"></script>
     </environment>
-    <environment names="Staging,Production">
+    <environment exclude="Development">
         <script src="@Values.CdnServerAddress/dist/AiurUI.min.js" asp-append-version="true"></script>
     </environment>
     @RenderSection("Scripts", required: false)
