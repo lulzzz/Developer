@@ -17,67 +17,82 @@
     </environment>
 </head>
 <body>
-    <div class="container">
-        <div class="navbar navbar-default">
-            <div class="navbar-header">
-                <button class="navbar-toggle" type="button" data-target=".navbar-collapse" data-toggle="collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand hidden-md hidden-sm" href="/">Aiursoft Developer Center</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/">News</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        @if (!SignInManager.IsSignedIn(User))
-                        {
-                            <a asp-controller="Auth" asp-action="GoAuth">
-                                <i class="fa fa-lock"></i>
-                                Login
-                            </a>
-                        }
-                        else
-                        {
-                            <a href="@Values.AccountServerAddress">
-                                <i class="fa fa-user-o"></i>
-                                Your Profile
-                            </a>
-                        }
-                    </li>
-                    @if (SignInManager.IsSignedIn(User))
-                    {
-                        <li>
-                            <a href="javascript:$('#logoutForm').submit()">
-                                <i class="fa fa-unlock"></i>
-                                Sign Out
-                            </a>
-                        </li>
-                    }
-                </ul>
-            </div>
-            <form class="hidden" asp-controller="Home" asp-action="LogOff" method="post" id="logoutForm"></form>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">Aiursoft</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+                <li class="nav-item"><a class="nav-link disabled" href="#">Disabled</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+            </ul>
         </div>
+        <div class="form-inline">
+            <ul class="navbar-nav mr-auto">
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Values.AccountServerAddress">
+                            <i class="fa fa-user-o"></i>
+                            Your Profile
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:$('#logoutForm').submit()">
+                            <i class="fa fa-unlock"></i>
+                            Sign Out
+                        </a>
+                    </li>
+                }
+                else
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Auth" asp-action="GoAuth">
+                            <i class="fa fa-lock"></i>
+                            Login
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Auth" asp-action="GoAuth">
+                            <i class="fa fa-address-book"></i>
+                            Register
+                        </a>
+                    </li>
+                }
+            </ul>
+        </div>
+    </nav>
+    <main role="main" class="container">
         @RenderBody()
-    </div>
+    </main>
+
     <footer class="footer">
         <div class="container">
-            <p class="text-muted">&copy; 2017 - @Values.ProjectName |
+            <p class="text-muted">
+                &copy; 2017 - @Values.ProjectName |
                 <a href="@(new AiurUrl(Values.ApiServerAddress, "Api", "SetLang", new { Host = $"{Context.Request.Scheme}://{Context.Request.Host}", Path = Context.Request.Path }))">Language</a> |
-                <a href="#">Company</a>
-                <a href="@Values.AccountServerAddress">Account</a>
-                <a href="#">Privacy</a>
-                <a href="#">License</a>
+                <a href="#">Company</a> |
+                <a href="@Values.AccountServerAddress">Account</a> |
+                <a href="#">Privacy</a> |
+                <a href="#">License</a> |
             </p>
         </div>
     </footer>
     <environment names="Development">
         <script src="@Values.CdnServerAddress/node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="@Values.CdnServerAddress/node_modules/popper.js/dist/umd/popper.min.js"></script>
         <script src="@Values.CdnServerAddress/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="@Values.CdnServerAddress/node_modules/jquery-validation/dist/jquery.validate.js"></script>
         <script src="@Values.CdnServerAddress/node_modules/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
