@@ -38,41 +38,37 @@
                     </div>
                 </li>
             </ul>
-        </div>
-        <div class="form-inline">
-            <ul class="navbar-nav mr-auto">
-                @if (SignInManager.IsSignedIn(User))
-                {
-                    <li class="nav-item">
-                        <a class="nav-link" href="@Values.AccountServerAddress">
-                            <i class="fa fa-user-o"></i>
-                            Your Profile
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="javascript:$('#logoutForm').submit()">
-                            <i class="fa fa-unlock"></i>
-                            Sign Out
-                        </a>
-                    </li>
-                }
-                else
-                {
-                    <li class="nav-item">
-                        <a class="nav-link" asp-controller="Auth" asp-action="GoAuth">
-                            <i class="fa fa-lock"></i>
-                            Login
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-controller="Auth" asp-action="GoAuth">
-                            <i class="fa fa-address-book"></i>
-                            Register
-                        </a>
-                    </li>
-                }
-            </ul>
-            <form class="hidden" asp-controller="Home" asp-action="LogOff" method="post" id="logoutForm"></form> 
+            <div class="form-inline">
+                <ul class="navbar-nav mr-auto">
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Values.AccountServerAddress">
+                                Your Profile
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:$('#logoutForm').submit()">
+                                Sign Out
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Auth" asp-action="GoAuth">
+                                Login
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Auth" asp-action="GoAuth">
+                                Register
+                            </a>
+                        </li>
+                    }
+                </ul>
+                <form class="hidden" asp-controller="Home" asp-action="LogOff" method="post" id="logoutForm"></form>
+            </div>
         </div>
     </nav>
     <main role="main" class="container">
