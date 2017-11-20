@@ -1,15 +1,11 @@
 ﻿@model Aiursoft.Developer.Models.AppsViewModels.IndexViewModel
 @{
-    ViewData["Title"] = "DashBoard";
+    ViewData["Title"] = "Dashboard";
     Layout = "_AppLayout";
 }
 <div class="container-fluid">
-    <!-- Breadcrumbs-->
     <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-            <a href="index.html">Dashboard</a>
-        </li>
-        <li class="breadcrumb-item active">Blank Page</li>
+        <li class="breadcrumb-item active">@ViewData["Title"]</li>
     </ol>
     <div class="row">
         <div class="col-12">
