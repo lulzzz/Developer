@@ -1,3 +1,54 @@
-﻿<div class="container">
-    <h1>An error occoured while processing your request!</h1>
-</div>
+﻿@{
+    ViewData["Title"] = "500 Error";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="~/favicon.ico">
+    <title>@ViewData["Title"] - @Values.ProjectName</title>
+
+    <environment names="Development">
+        <link href="@Values.CdnServerAddress/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="@Values.CdnServerAddress/node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="@Values.CdnServerAddress/node_modules/startbootstrap-sb-admin/css/sb-admin.css" rel="stylesheet" />
+        <link href="@Values.CdnServerAddress/css/OAuthUI.css" rel="stylesheet" />
+    </environment>
+    <environment names="Staging,Production">
+        <link href="@Values.CdnServerAddress/dist/OAuthUI.min.css" rel="stylesheet" asp-append-version="true">
+    </environment>
+</head>
+<body class="bg-dark lines">
+    <div class="container">
+        <div class="card card-register mx-auto mt-5">
+            <div class="card-header">@ViewData["Title"]</div>
+            <div class="card-body">
+                <h1 class="text-danger">500 - Server error</h1>
+                <h3>This operation caused an error on our server.</h3>
+                <p>Sorry about it. Please try again and tell us about the problem.</p>
+            </div>
+            <a class="card-footer clearfix small z-1" href="@Values.WWWServerAddress">
+                <span class="float-left">Back to Aiursoft.com</span>
+                <span class="float-right">
+                    <i class="fa fa-angle-right"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+    <environment names="Development">
+        <script src="@Values.CdnServerAddress/node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="@Values.CdnServerAddress/node_modules/popper.js/dist/umd/popper.min.js"></script>
+        <script src="@Values.CdnServerAddress/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="@Values.CdnServerAddress/node_modules/jquery-validation/dist/jquery.validate.js"></script>
+        <script src="@Values.CdnServerAddress/node_modules/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+        <script src="@Values.CdnServerAddress/js/OAuthUI.js" asp-append-version="true"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="@Values.CdnServerAddress/dist/OAuthUI.min.js" asp-append-version="true"></script>
+    </environment>
+</body>
+</html>
