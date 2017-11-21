@@ -36,7 +36,9 @@
                 <li class="nav-item @(Model.ActivePanel == 1 ? "active":string.Empty)" data-toggle="tooltip" data-placement="right" title="All Apps">
                     <a class="nav-link" asp-controller="Apps" asp-action="AllApps">
                         <i class="fa fa-fw fa-server"></i>
-                        <span class="nav-link-text">All Apps @Model.AppCount</span>
+                        <span class="nav-link-text">All Apps
+                            <span class="badge badge-info">@Model.AppCount</span>
+                        </span>
                     </a>
                 </li>
                 <li class="nav-item @(Model.ActivePanel == 2 ? "active":string.Empty)" data-toggle="tooltip" data-placement="right" title="Buckets">
