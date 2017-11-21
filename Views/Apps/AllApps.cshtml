@@ -11,11 +11,6 @@
         <li class="breadcrumb-item active">@ViewData["Title"]</li>
     </ol>
     <div class="row">
-        <div class="col-12">
-            <div class="text-center">
-                <a asp-controller="Apps" asp-action="CreateApp" class="btn btn-success">Create App</a>
-            </div>
-        </div>
         @foreach (var app in Model.AllApps)
         {
             <div class="col-xl-3 col-sm-6 mb-3">
@@ -36,5 +31,10 @@
                 </div>
             </div>
         }
+        <div class="col-12 mt-3">
+            <div class="text-center">
+                <a asp-controller="Apps" asp-action="CreateApp" class="btn btn-info">Create App</a>
+            </div>
+        </div>
     </div>
 </div>
