@@ -36,7 +36,8 @@
                 <li class="nav-item @(Model.ActivePanel == 1 ? "active":string.Empty)" data-toggle="tooltip" data-placement="right" title="All Apps">
                     <a class="nav-link" asp-controller="Apps" asp-action="AllApps">
                         <i class="fa fa-fw fa-server"></i>
-                        <span class="nav-link-text">All Apps
+                        <span class="nav-link-text">
+                            All Apps
                             <span class="badge badge-info">@Model.AppCount</span>
                         </span>
                     </a>
@@ -136,16 +137,14 @@
         @RenderBody()
         <footer class="sticky-footer">
             <div class="container">
-                <div class="text-center">
-                    <small>
-                        <a href="@(new AiurUrl(Values.ApiServerAddress, "Api", "SetLang", new
+                <small>
+                    <a href="@(new AiurUrl(Values.ApiServerAddress, "Api", "SetLang", new
                         {
                             Host = $"{Context.Request.Scheme}://{Context.Request.Host}",
                             Path = Context.Request.Path
                         }))">Language(语言)</a>
-                    </small>
-                    <small>Copyright © @Values.ProjectName @DateTime.Now.Year</small>
-                </div>
+                </small> |
+                <small>Copyright © @Values.ProjectName @DateTime.Now.Year</small>
             </div>
         </footer>
 
