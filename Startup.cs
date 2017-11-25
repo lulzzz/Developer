@@ -61,6 +61,12 @@ namespace Aiursoft.Developer
                 SupportedCultures = SupportedCultures,
                 SupportedUICultures = SupportedCultures
             });
+            var developerAppId = Configuration["developerAppId"];
+            var developerAppSecret = Configuration["developerAppSecret"];
+            if (string.IsNullOrWhiteSpace(developerAppId) || string.IsNullOrWhiteSpace(developerAppSecret))
+            {
+                throw new InvalidOperationException("Did not get appId and appSecret from configuration!");
+            }
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -72,7 +78,7 @@ namespace Aiursoft.Developer
             }
             app.UseStaticFiles();
             app.UseAuthentication()
-            .UseAiursoftAuthentication(appId: "29bf5250a6d93d47b6164ac2821d5009", appSecret: "784400c3d9066c5584489497273f867e")
+            .UseAiursoftAuthentication(appId: developerAppId, appSecret: developerAppSecret)
             .UseMvcWithDefaultRoute();
         }
     }
