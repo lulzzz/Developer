@@ -24,6 +24,8 @@ namespace Aiursoft.Developer
     {
         public IConfiguration Configuration { get; }
         public bool IsDevelopment { get; set; }
+        public string AppId {get;set;}
+        public string AppSecret{get;set;}
 
         public Startup(IConfiguration configuration, IHostingEnvironment env)
         {
@@ -37,6 +39,15 @@ namespace Aiursoft.Developer
 
         public void ConfigureServices(IServiceCollection services)
         {
+            AppId = Configuration["developerAppId"];
+            AppSecret = Configuration["developerAppSecret"];
+            Console.WriteLine($"AppId={AppId}, AppSecret={AppSecret}");
+            if (string.IsNullOrWhiteSpace(AppId) || string.IsNullOrWhiteSpace(AppSecret))
+            {
+                throw new InvalidOperationException("Did not get appId and appSecret from configuration!");
+            }
+
+
             services.ConnectToAiursoftDatabase<DeveloperDbContext>("Developer", IsDevelopment);
             services.AddIdentity<DeveloperUser, IdentityRole>()
                 .AddEntityFrameworkStores<DeveloperDbContext>()
@@ -61,12 +72,7 @@ namespace Aiursoft.Developer
                 SupportedCultures = SupportedCultures,
                 SupportedUICultures = SupportedCultures
             });
-            var developerAppId = Configuration["developerAppId"];
-            var developerAppSecret = Configuration["developerAppSecret"];
-            if (string.IsNullOrWhiteSpace(developerAppId) || string.IsNullOrWhiteSpace(developerAppSecret))
-            {
-                throw new InvalidOperationException("Did not get appId and appSecret from configuration!");
-            }
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -78,7 +84,7 @@ namespace Aiursoft.Developer
             }
             app.UseStaticFiles();
             app.UseAuthentication()
-            .UseAiursoftAuthentication(appId: developerAppId, appSecret: developerAppSecret)
+            .UseAiursoftAuthentication(appId: AppId, appSecret: AppSecret)
             .UseMvcWithDefaultRoute();
         }
     }
