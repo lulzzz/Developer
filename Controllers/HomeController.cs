@@ -10,7 +10,6 @@ using Aiursoft.Pylon.Models;
 
 namespace Aiursoft.Developer.Controllers
 {
-    [AiurExceptionHandler]
     [AiurRequireHttps]
     public class HomeController : AiurController
     {

@@ -18,7 +18,6 @@ using System.Threading.Tasks;
 namespace Aiursoft.Developer.Controllers
 {
     [AiurForceAuth]
-    //[AiurExceptionHandler]
     [AiurRequireHttps]
     public class AppsController : AiurController
     {

@@ -18,7 +18,6 @@ using Aiursoft.Pylon.Models.Developer;
 namespace Aiursoft.Developer.Controllers
 {
     [AiurForceAuth]
-    [AiurExceptionHandler]
     [AiurRequireHttps]
     public class FilesController : AiurController
     {

@@ -16,7 +16,6 @@ using System.Threading.Tasks;
 namespace Aiursoft.Developer.Controllers
 {
     [AiurRequireHttps]
-    [AiurExceptionHandler]
     public class ApiController : AiurApiController
     {
         public readonly UserManager<DeveloperUser> _userManager;
@@ -36,6 +35,7 @@ namespace Aiursoft.Developer.Controllers
             _dbContext = _context;
         }
 
+        [AiurExceptionHandler]
         public async Task<JsonResult> IsValidApp(IsValidateAppAddressModel model)
         {
             if (!ModelState.IsValid)
@@ -57,6 +57,7 @@ namespace Aiursoft.Developer.Controllers
             }
         }
         //http://developer.aiursoft.obisoft.com.cn/api/AppInfo?AppId=29bf5250a6d93d47b6164ac2821d5009
+        [AiurExceptionHandler]
         public async Task<JsonResult> AppInfo(AppInfoAddressModel model)
         {
             if (!ModelState.IsValid)
