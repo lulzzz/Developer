@@ -3,7 +3,7 @@
     ViewData["Title"] = Model.AppName;
     Layout = "_AppLayout";
 }
-<form asp-controller="Apps" asp-action="ViewApp" method="post" class="main-content">
+<form asp-controller="Apps" asp-action="ViewApp" method="post" class="container-fluid">
     @if (Model.JustHaveUpdated)
     {
         <div class="alert alert-success alert-dismissible" role="alert">
