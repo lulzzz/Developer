@@ -1,0 +1,1074 @@
+AppId=4b43b0aee35624cd95b910189b3dc231, AppSecret=fbade9e36a3f36d3d676c1b808451dd7
+Using development database!
+info: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[0]
+      User profile is available. Using 'C:\Users\Anduin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+Hosting environment: Development
+Content root path: D:\WorkSpace\Developer
+Now listening on: http://localhost:27686
+Application started. Press Ctrl+C to shut down.
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:61134/  
+info: Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler[8]
+      AuthenticationScheme: Identity.Application was successfully authenticated.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method Aiursoft.Developer.Controllers.HomeController.Index (Aiursoft.Developer) with arguments ((null)) - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.ViewResultExecutor[1]
+      Executing ViewResult, running view at path /Views/Home/Index.cshtml.
+info: Microsoft.EntityFrameworkCore.Infrastructure[100403]
+      Entity Framework Core 2.0.0-rtm-26452 initialized 'DeveloperDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (61ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[AccountCreateTime], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[HeadImgUrl], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NickName], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PreferedLanguage], [u].[SecurityStamp], [u].[Sex], [u].[TwoFactorEnabled], [u].[UserName]
+      FROM [AspNetUsers] AS [u]
+      WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action Aiursoft.Developer.Controllers.HomeController.Index (Aiursoft.Developer) in 4269.9018ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 4587.5352ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:61134/Apps  
+info: Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler[8]
+      AuthenticationScheme: Identity.Application was successfully authenticated.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method Aiursoft.Developer.Controllers.AppsController.Index (Aiursoft.Developer) with arguments ((null)) - ModelState is Valid
+info: Microsoft.EntityFrameworkCore.Infrastructure[100403]
+      Entity Framework Core 2.0.0-rtm-26452 initialized 'DeveloperDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (9ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(2) [t].[Id], [t].[AccessFailedCount], [t].[AccountCreateTime], [t].[ConcurrencyStamp], [t].[Email], [t].[EmailConfirmed], [t].[HeadImgUrl], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NickName], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[PreferedLanguage], [t].[SecurityStamp], [t].[Sex], [t].[TwoFactorEnabled], [t].[UserName]
+      FROM [AspNetUsers] AS [t]
+      WHERE [t].[UserName] = @__User_Identity_Name_0
+      ORDER BY [t].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (2ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT [t.MyApps].[AppId], [t.MyApps].[AppCategory], [t.MyApps].[AppCreateTime], [t.MyApps].[AppDescription], [t.MyApps].[AppDomain], [t.MyApps].[AppIconAddress], [t.MyApps].[AppName], [t.MyApps].[AppPlatform], [t.MyApps].[AppSecret], [t.MyApps].[CreaterId], [t.MyApps].[DebugMode], [t.MyApps].[EnableOAuth], [t.MyApps].[ForceConfirmation], [t.MyApps].[ForceInputPassword], [t.MyApps].[LicenseUrl], [t.MyApps].[PrivacyStatementUrl]
+      FROM [Apps] AS [t.MyApps]
+      INNER JOIN (
+          SELECT TOP(1) [t0].[Id]
+          FROM [AspNetUsers] AS [t0]
+          WHERE [t0].[UserName] = @__User_Identity_Name_0
+          ORDER BY [t0].[Id]
+      ) AS [t1] ON [t.MyApps].[CreaterId] = [t1].[Id]
+      ORDER BY [t1].[Id]
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.ViewResultExecutor[1]
+      Executing ViewResult, running view at path /Views/Apps/Index.cshtml.
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[AccountCreateTime], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[HeadImgUrl], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NickName], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PreferedLanguage], [u].[SecurityStamp], [u].[Sex], [u].[TwoFactorEnabled], [u].[UserName]
+      FROM [AspNetUsers] AS [u]
+      WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action Aiursoft.Developer.Controllers.AppsController.Index (Aiursoft.Developer) in 761.3623ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 804.1456ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:61134/Apps/AllApps  
+info: Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler[8]
+      AuthenticationScheme: Identity.Application was successfully authenticated.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method Aiursoft.Developer.Controllers.AppsController.AllApps (Aiursoft.Developer) with arguments ((null)) - ModelState is Valid
+info: Microsoft.EntityFrameworkCore.Infrastructure[100403]
+      Entity Framework Core 2.0.0-rtm-26452 initialized 'DeveloperDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(2) [t].[Id], [t].[AccessFailedCount], [t].[AccountCreateTime], [t].[ConcurrencyStamp], [t].[Email], [t].[EmailConfirmed], [t].[HeadImgUrl], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NickName], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[PreferedLanguage], [t].[SecurityStamp], [t].[Sex], [t].[TwoFactorEnabled], [t].[UserName]
+      FROM [AspNetUsers] AS [t]
+      WHERE [t].[UserName] = @__User_Identity_Name_0
+      ORDER BY [t].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT [t.MyApps].[AppId], [t.MyApps].[AppCategory], [t.MyApps].[AppCreateTime], [t.MyApps].[AppDescription], [t.MyApps].[AppDomain], [t.MyApps].[AppIconAddress], [t.MyApps].[AppName], [t.MyApps].[AppPlatform], [t.MyApps].[AppSecret], [t.MyApps].[CreaterId], [t.MyApps].[DebugMode], [t.MyApps].[EnableOAuth], [t.MyApps].[ForceConfirmation], [t.MyApps].[ForceInputPassword], [t.MyApps].[LicenseUrl], [t.MyApps].[PrivacyStatementUrl]
+      FROM [Apps] AS [t.MyApps]
+      INNER JOIN (
+          SELECT TOP(1) [t0].[Id]
+          FROM [AspNetUsers] AS [t0]
+          WHERE [t0].[UserName] = @__User_Identity_Name_0
+          ORDER BY [t0].[Id]
+      ) AS [t1] ON [t.MyApps].[CreaterId] = [t1].[Id]
+      ORDER BY [t1].[Id]
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.ViewResultExecutor[1]
+      Executing ViewResult, running view at path /Views/Apps/AllApps.cshtml.
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (1ms) [Parameters=[@__cuser_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT [t].[AppId], [t].[AppCategory], [t].[AppCreateTime], [t].[AppDescription], [t].[AppDomain], [t].[AppIconAddress], [t].[AppName], [t].[AppPlatform], [t].[AppSecret], [t].[CreaterId], [t].[DebugMode], [t].[EnableOAuth], [t].[ForceConfirmation], [t].[ForceInputPassword], [t].[LicenseUrl], [t].[PrivacyStatementUrl]
+      FROM [Apps] AS [t]
+      WHERE [t].[CreaterId] = @__cuser_Id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[AccountCreateTime], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[HeadImgUrl], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NickName], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PreferedLanguage], [u].[SecurityStamp], [u].[Sex], [u].[TwoFactorEnabled], [u].[UserName]
+      FROM [AspNetUsers] AS [u]
+      WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action Aiursoft.Developer.Controllers.AppsController.AllApps (Aiursoft.Developer) in 570.7314ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 610.7498ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:61134/Apps/ViewApp/4b43b0aee35624cd95b910189b3dc231  
+info: Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler[8]
+      AuthenticationScheme: Identity.Application was successfully authenticated.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method Aiursoft.Developer.Controllers.AppsController.ViewApp (Aiursoft.Developer) with arguments (4b43b0aee35624cd95b910189b3dc231, False) - ModelState is Valid
+info: Microsoft.EntityFrameworkCore.Infrastructure[100403]
+      Entity Framework Core 2.0.0-rtm-26452 initialized 'DeveloperDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [e].[AppId], [e].[AppCategory], [e].[AppCreateTime], [e].[AppDescription], [e].[AppDomain], [e].[AppIconAddress], [e].[AppName], [e].[AppPlatform], [e].[AppSecret], [e].[CreaterId], [e].[DebugMode], [e].[EnableOAuth], [e].[ForceConfirmation], [e].[ForceInputPassword], [e].[LicenseUrl], [e].[PrivacyStatementUrl]
+      FROM [Apps] AS [e]
+      WHERE [e].[AppId] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (2ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(2) [t].[Id], [t].[AccessFailedCount], [t].[AccountCreateTime], [t].[ConcurrencyStamp], [t].[Email], [t].[EmailConfirmed], [t].[HeadImgUrl], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NickName], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[PreferedLanguage], [t].[SecurityStamp], [t].[Sex], [t].[TwoFactorEnabled], [t].[UserName]
+      FROM [AspNetUsers] AS [t]
+      WHERE [t].[UserName] = @__User_Identity_Name_0
+      ORDER BY [t].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT [t.MyApps].[AppId], [t.MyApps].[AppCategory], [t.MyApps].[AppCreateTime], [t.MyApps].[AppDescription], [t.MyApps].[AppDomain], [t.MyApps].[AppIconAddress], [t.MyApps].[AppName], [t.MyApps].[AppPlatform], [t.MyApps].[AppSecret], [t.MyApps].[CreaterId], [t.MyApps].[DebugMode], [t.MyApps].[EnableOAuth], [t.MyApps].[ForceConfirmation], [t.MyApps].[ForceInputPassword], [t.MyApps].[LicenseUrl], [t.MyApps].[PrivacyStatementUrl]
+      FROM [Apps] AS [t.MyApps]
+      INNER JOIN (
+          SELECT TOP(1) [t0].[Id]
+          FROM [AspNetUsers] AS [t0]
+          WHERE [t0].[UserName] = @__User_Identity_Name_0
+          ORDER BY [t0].[Id]
+      ) AS [t1] ON [t.MyApps].[CreaterId] = [t1].[Id]
+      ORDER BY [t1].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [p].[PermissionId], [p].[DeleteAble], [p].[PermissionName]
+      FROM [Permissions] AS [p]
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[@__ThisApp_AppId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT [t].[AppPermissionId], [t].[AppId], [t].[PermissionId]
+      FROM [AppPermissions] AS [t]
+      WHERE [t].[AppId] = @__ThisApp_AppId_0
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.ViewResultExecutor[1]
+      Executing ViewResult, running view at path /Views/Apps/ViewApp.cshtml.
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[AccountCreateTime], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[HeadImgUrl], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NickName], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PreferedLanguage], [u].[SecurityStamp], [u].[Sex], [u].[TwoFactorEnabled], [u].[UserName]
+      FROM [AspNetUsers] AS [u]
+      WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action Aiursoft.Developer.Controllers.AppsController.ViewApp (Aiursoft.Developer) in 1569.6396ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1624.6011ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:61134/Apps/ViewApp/4b43b0aee35624cd95b910189b3dc231  
+info: Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler[8]
+      AuthenticationScheme: Identity.Application was successfully authenticated.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method Aiursoft.Developer.Controllers.AppsController.ViewApp (Aiursoft.Developer) with arguments (4b43b0aee35624cd95b910189b3dc231, False) - ModelState is Valid
+info: Microsoft.EntityFrameworkCore.Infrastructure[100403]
+      Entity Framework Core 2.0.0-rtm-26452 initialized 'DeveloperDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [e].[AppId], [e].[AppCategory], [e].[AppCreateTime], [e].[AppDescription], [e].[AppDomain], [e].[AppIconAddress], [e].[AppName], [e].[AppPlatform], [e].[AppSecret], [e].[CreaterId], [e].[DebugMode], [e].[EnableOAuth], [e].[ForceConfirmation], [e].[ForceInputPassword], [e].[LicenseUrl], [e].[PrivacyStatementUrl]
+      FROM [Apps] AS [e]
+      WHERE [e].[AppId] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (1ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(2) [t].[Id], [t].[AccessFailedCount], [t].[AccountCreateTime], [t].[ConcurrencyStamp], [t].[Email], [t].[EmailConfirmed], [t].[HeadImgUrl], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NickName], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[PreferedLanguage], [t].[SecurityStamp], [t].[Sex], [t].[TwoFactorEnabled], [t].[UserName]
+      FROM [AspNetUsers] AS [t]
+      WHERE [t].[UserName] = @__User_Identity_Name_0
+      ORDER BY [t].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (1ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT [t.MyApps].[AppId], [t.MyApps].[AppCategory], [t.MyApps].[AppCreateTime], [t.MyApps].[AppDescription], [t.MyApps].[AppDomain], [t.MyApps].[AppIconAddress], [t.MyApps].[AppName], [t.MyApps].[AppPlatform], [t.MyApps].[AppSecret], [t.MyApps].[CreaterId], [t.MyApps].[DebugMode], [t.MyApps].[EnableOAuth], [t.MyApps].[ForceConfirmation], [t.MyApps].[ForceInputPassword], [t.MyApps].[LicenseUrl], [t.MyApps].[PrivacyStatementUrl]
+      FROM [Apps] AS [t.MyApps]
+      INNER JOIN (
+          SELECT TOP(1) [t0].[Id]
+          FROM [AspNetUsers] AS [t0]
+          WHERE [t0].[UserName] = @__User_Identity_Name_0
+          ORDER BY [t0].[Id]
+      ) AS [t1] ON [t.MyApps].[CreaterId] = [t1].[Id]
+      ORDER BY [t1].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [p].[PermissionId], [p].[DeleteAble], [p].[PermissionName]
+      FROM [Permissions] AS [p]
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[@__ThisApp_AppId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT [t].[AppPermissionId], [t].[AppId], [t].[PermissionId]
+      FROM [AppPermissions] AS [t]
+      WHERE [t].[AppId] = @__ThisApp_AppId_0
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.ViewResultExecutor[1]
+      Executing ViewResult, running view at path /Views/Apps/ViewApp.cshtml.
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[AccountCreateTime], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[HeadImgUrl], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NickName], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PreferedLanguage], [u].[SecurityStamp], [u].[Sex], [u].[TwoFactorEnabled], [u].[UserName]
+      FROM [AspNetUsers] AS [u]
+      WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action Aiursoft.Developer.Controllers.AppsController.ViewApp (Aiursoft.Developer) in 204.1931ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 234.6084ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:61134/images/appdefaulticon.png  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /images/appdefaulticon.png was not modified
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 28.4394ms 304 image/png
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:61134/Apps/ViewApp/4b43b0aee35624cd95b910189b3dc231  
+info: Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler[8]
+      AuthenticationScheme: Identity.Application was successfully authenticated.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method Aiursoft.Developer.Controllers.AppsController.ViewApp (Aiursoft.Developer) with arguments (4b43b0aee35624cd95b910189b3dc231, False) - ModelState is Valid
+info: Microsoft.EntityFrameworkCore.Infrastructure[100403]
+      Entity Framework Core 2.0.0-rtm-26452 initialized 'DeveloperDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [e].[AppId], [e].[AppCategory], [e].[AppCreateTime], [e].[AppDescription], [e].[AppDomain], [e].[AppIconAddress], [e].[AppName], [e].[AppPlatform], [e].[AppSecret], [e].[CreaterId], [e].[DebugMode], [e].[EnableOAuth], [e].[ForceConfirmation], [e].[ForceInputPassword], [e].[LicenseUrl], [e].[PrivacyStatementUrl]
+      FROM [Apps] AS [e]
+      WHERE [e].[AppId] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (2ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(2) [t].[Id], [t].[AccessFailedCount], [t].[AccountCreateTime], [t].[ConcurrencyStamp], [t].[Email], [t].[EmailConfirmed], [t].[HeadImgUrl], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NickName], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[PreferedLanguage], [t].[SecurityStamp], [t].[Sex], [t].[TwoFactorEnabled], [t].[UserName]
+      FROM [AspNetUsers] AS [t]
+      WHERE [t].[UserName] = @__User_Identity_Name_0
+      ORDER BY [t].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (1ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT [t.MyApps].[AppId], [t.MyApps].[AppCategory], [t.MyApps].[AppCreateTime], [t.MyApps].[AppDescription], [t.MyApps].[AppDomain], [t.MyApps].[AppIconAddress], [t.MyApps].[AppName], [t.MyApps].[AppPlatform], [t.MyApps].[AppSecret], [t.MyApps].[CreaterId], [t.MyApps].[DebugMode], [t.MyApps].[EnableOAuth], [t.MyApps].[ForceConfirmation], [t.MyApps].[ForceInputPassword], [t.MyApps].[LicenseUrl], [t.MyApps].[PrivacyStatementUrl]
+      FROM [Apps] AS [t.MyApps]
+      INNER JOIN (
+          SELECT TOP(1) [t0].[Id]
+          FROM [AspNetUsers] AS [t0]
+          WHERE [t0].[UserName] = @__User_Identity_Name_0
+          ORDER BY [t0].[Id]
+      ) AS [t1] ON [t.MyApps].[CreaterId] = [t1].[Id]
+      ORDER BY [t1].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [p].[PermissionId], [p].[DeleteAble], [p].[PermissionName]
+      FROM [Permissions] AS [p]
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[@__ThisApp_AppId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT [t].[AppPermissionId], [t].[AppId], [t].[PermissionId]
+      FROM [AppPermissions] AS [t]
+      WHERE [t].[AppId] = @__ThisApp_AppId_0
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.ViewResultExecutor[1]
+      Executing ViewResult, running view at path /Views/Apps/ViewApp.cshtml.
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[AccountCreateTime], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[HeadImgUrl], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NickName], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PreferedLanguage], [u].[SecurityStamp], [u].[Sex], [u].[TwoFactorEnabled], [u].[UserName]
+      FROM [AspNetUsers] AS [u]
+      WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action Aiursoft.Developer.Controllers.AppsController.ViewApp (Aiursoft.Developer) in 194.6884ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 225.8478ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:61134/images/appdefaulticon.png  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /images/appdefaulticon.png was not modified
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 19.1063ms 304 image/png
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:61134/Apps/ViewApp/4b43b0aee35624cd95b910189b3dc231  
+info: Microsoft.EntityFrameworkCore.Infrastructure[100403]
+      Entity Framework Core 2.0.0-rtm-26452 initialized 'DeveloperDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (2ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[AccountCreateTime], [e].[ConcurrencyStamp], [e].[Email], [e].[EmailConfirmed], [e].[HeadImgUrl], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NickName], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PreferedLanguage], [e].[SecurityStamp], [e].[Sex], [e].[TwoFactorEnabled], [e].[UserName]
+      FROM [AspNetUsers] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+      FROM [AspNetUserClaims] AS [uc]
+      WHERE [uc].[UserId] = @__user_Id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT [role].[Name]
+      FROM [AspNetUserRoles] AS [userRole]
+      INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+      WHERE [userRole].[UserId] = @__userId_0
+info: Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler[8]
+      AuthenticationScheme: Identity.Application was successfully authenticated.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method Aiursoft.Developer.Controllers.AppsController.ViewApp (Aiursoft.Developer) with arguments (4b43b0aee35624cd95b910189b3dc231, False) - ModelState is Valid
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [e].[AppId], [e].[AppCategory], [e].[AppCreateTime], [e].[AppDescription], [e].[AppDomain], [e].[AppIconAddress], [e].[AppName], [e].[AppPlatform], [e].[AppSecret], [e].[CreaterId], [e].[DebugMode], [e].[EnableOAuth], [e].[ForceConfirmation], [e].[ForceInputPassword], [e].[LicenseUrl], [e].[PrivacyStatementUrl]
+      FROM [Apps] AS [e]
+      WHERE [e].[AppId] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (1ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(2) [t].[Id], [t].[AccessFailedCount], [t].[AccountCreateTime], [t].[ConcurrencyStamp], [t].[Email], [t].[EmailConfirmed], [t].[HeadImgUrl], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NickName], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[PreferedLanguage], [t].[SecurityStamp], [t].[Sex], [t].[TwoFactorEnabled], [t].[UserName]
+      FROM [AspNetUsers] AS [t]
+      WHERE [t].[UserName] = @__User_Identity_Name_0
+      ORDER BY [t].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (3ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT [t.MyApps].[AppId], [t.MyApps].[AppCategory], [t.MyApps].[AppCreateTime], [t.MyApps].[AppDescription], [t.MyApps].[AppDomain], [t.MyApps].[AppIconAddress], [t.MyApps].[AppName], [t.MyApps].[AppPlatform], [t.MyApps].[AppSecret], [t.MyApps].[CreaterId], [t.MyApps].[DebugMode], [t.MyApps].[EnableOAuth], [t.MyApps].[ForceConfirmation], [t.MyApps].[ForceInputPassword], [t.MyApps].[LicenseUrl], [t.MyApps].[PrivacyStatementUrl]
+      FROM [Apps] AS [t.MyApps]
+      INNER JOIN (
+          SELECT TOP(1) [t0].[Id]
+          FROM [AspNetUsers] AS [t0]
+          WHERE [t0].[UserName] = @__User_Identity_Name_0
+          ORDER BY [t0].[Id]
+      ) AS [t1] ON [t.MyApps].[CreaterId] = [t1].[Id]
+      ORDER BY [t1].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [p].[PermissionId], [p].[DeleteAble], [p].[PermissionName]
+      FROM [Permissions] AS [p]
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[@__ThisApp_AppId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT [t].[AppPermissionId], [t].[AppId], [t].[PermissionId]
+      FROM [AppPermissions] AS [t]
+      WHERE [t].[AppId] = @__ThisApp_AppId_0
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.ViewResultExecutor[1]
+      Executing ViewResult, running view at path /Views/Apps/ViewApp.cshtml.
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[AccountCreateTime], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[HeadImgUrl], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NickName], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PreferedLanguage], [u].[SecurityStamp], [u].[Sex], [u].[TwoFactorEnabled], [u].[UserName]
+      FROM [AspNetUsers] AS [u]
+      WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action Aiursoft.Developer.Controllers.AppsController.ViewApp (Aiursoft.Developer) in 242.343ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 429.4865ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:61134/images/appdefaulticon.png  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /images/appdefaulticon.png was not modified
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 15.4736ms 304 image/png
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:61134/Apps/ViewApp/4b43b0aee35624cd95b910189b3dc231  
+info: Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler[8]
+      AuthenticationScheme: Identity.Application was successfully authenticated.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method Aiursoft.Developer.Controllers.AppsController.ViewApp (Aiursoft.Developer) with arguments (4b43b0aee35624cd95b910189b3dc231, False) - ModelState is Valid
+info: Microsoft.EntityFrameworkCore.Infrastructure[100403]
+      Entity Framework Core 2.0.0-rtm-26452 initialized 'DeveloperDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (14ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [e].[AppId], [e].[AppCategory], [e].[AppCreateTime], [e].[AppDescription], [e].[AppDomain], [e].[AppIconAddress], [e].[AppName], [e].[AppPlatform], [e].[AppSecret], [e].[CreaterId], [e].[DebugMode], [e].[EnableOAuth], [e].[ForceConfirmation], [e].[ForceInputPassword], [e].[LicenseUrl], [e].[PrivacyStatementUrl]
+      FROM [Apps] AS [e]
+      WHERE [e].[AppId] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (2ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(2) [t].[Id], [t].[AccessFailedCount], [t].[AccountCreateTime], [t].[ConcurrencyStamp], [t].[Email], [t].[EmailConfirmed], [t].[HeadImgUrl], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NickName], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[PreferedLanguage], [t].[SecurityStamp], [t].[Sex], [t].[TwoFactorEnabled], [t].[UserName]
+      FROM [AspNetUsers] AS [t]
+      WHERE [t].[UserName] = @__User_Identity_Name_0
+      ORDER BY [t].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT [t.MyApps].[AppId], [t.MyApps].[AppCategory], [t.MyApps].[AppCreateTime], [t.MyApps].[AppDescription], [t.MyApps].[AppDomain], [t.MyApps].[AppIconAddress], [t.MyApps].[AppName], [t.MyApps].[AppPlatform], [t.MyApps].[AppSecret], [t.MyApps].[CreaterId], [t.MyApps].[DebugMode], [t.MyApps].[EnableOAuth], [t.MyApps].[ForceConfirmation], [t.MyApps].[ForceInputPassword], [t.MyApps].[LicenseUrl], [t.MyApps].[PrivacyStatementUrl]
+      FROM [Apps] AS [t.MyApps]
+      INNER JOIN (
+          SELECT TOP(1) [t0].[Id]
+          FROM [AspNetUsers] AS [t0]
+          WHERE [t0].[UserName] = @__User_Identity_Name_0
+          ORDER BY [t0].[Id]
+      ) AS [t1] ON [t.MyApps].[CreaterId] = [t1].[Id]
+      ORDER BY [t1].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [p].[PermissionId], [p].[DeleteAble], [p].[PermissionName]
+      FROM [Permissions] AS [p]
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[@__ThisApp_AppId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT [t].[AppPermissionId], [t].[AppId], [t].[PermissionId]
+      FROM [AppPermissions] AS [t]
+      WHERE [t].[AppId] = @__ThisApp_AppId_0
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.ViewResultExecutor[1]
+      Executing ViewResult, running view at path /Views/Apps/ViewApp.cshtml.
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[AccountCreateTime], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[HeadImgUrl], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NickName], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PreferedLanguage], [u].[SecurityStamp], [u].[Sex], [u].[TwoFactorEnabled], [u].[UserName]
+      FROM [AspNetUsers] AS [u]
+      WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action Aiursoft.Developer.Controllers.AppsController.ViewApp (Aiursoft.Developer) in 832.3003ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 868.6582ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:61134/images/appdefaulticon.png  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /images/appdefaulticon.png was not modified
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 19.5603ms 304 image/png
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:61134/Apps/ViewApp/4b43b0aee35624cd95b910189b3dc231  
+info: Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler[8]
+      AuthenticationScheme: Identity.Application was successfully authenticated.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method Aiursoft.Developer.Controllers.AppsController.ViewApp (Aiursoft.Developer) with arguments (4b43b0aee35624cd95b910189b3dc231, False) - ModelState is Valid
+info: Microsoft.EntityFrameworkCore.Infrastructure[100403]
+      Entity Framework Core 2.0.0-rtm-26452 initialized 'DeveloperDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [e].[AppId], [e].[AppCategory], [e].[AppCreateTime], [e].[AppDescription], [e].[AppDomain], [e].[AppIconAddress], [e].[AppName], [e].[AppPlatform], [e].[AppSecret], [e].[CreaterId], [e].[DebugMode], [e].[EnableOAuth], [e].[ForceConfirmation], [e].[ForceInputPassword], [e].[LicenseUrl], [e].[PrivacyStatementUrl]
+      FROM [Apps] AS [e]
+      WHERE [e].[AppId] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(2) [t].[Id], [t].[AccessFailedCount], [t].[AccountCreateTime], [t].[ConcurrencyStamp], [t].[Email], [t].[EmailConfirmed], [t].[HeadImgUrl], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NickName], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[PreferedLanguage], [t].[SecurityStamp], [t].[Sex], [t].[TwoFactorEnabled], [t].[UserName]
+      FROM [AspNetUsers] AS [t]
+      WHERE [t].[UserName] = @__User_Identity_Name_0
+      ORDER BY [t].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (2ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT [t.MyApps].[AppId], [t.MyApps].[AppCategory], [t.MyApps].[AppCreateTime], [t.MyApps].[AppDescription], [t.MyApps].[AppDomain], [t.MyApps].[AppIconAddress], [t.MyApps].[AppName], [t.MyApps].[AppPlatform], [t.MyApps].[AppSecret], [t.MyApps].[CreaterId], [t.MyApps].[DebugMode], [t.MyApps].[EnableOAuth], [t.MyApps].[ForceConfirmation], [t.MyApps].[ForceInputPassword], [t.MyApps].[LicenseUrl], [t.MyApps].[PrivacyStatementUrl]
+      FROM [Apps] AS [t.MyApps]
+      INNER JOIN (
+          SELECT TOP(1) [t0].[Id]
+          FROM [AspNetUsers] AS [t0]
+          WHERE [t0].[UserName] = @__User_Identity_Name_0
+          ORDER BY [t0].[Id]
+      ) AS [t1] ON [t.MyApps].[CreaterId] = [t1].[Id]
+      ORDER BY [t1].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [p].[PermissionId], [p].[DeleteAble], [p].[PermissionName]
+      FROM [Permissions] AS [p]
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[@__ThisApp_AppId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT [t].[AppPermissionId], [t].[AppId], [t].[PermissionId]
+      FROM [AppPermissions] AS [t]
+      WHERE [t].[AppId] = @__ThisApp_AppId_0
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.ViewResultExecutor[1]
+      Executing ViewResult, running view at path /Views/Apps/ViewApp.cshtml.
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[AccountCreateTime], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[HeadImgUrl], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NickName], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PreferedLanguage], [u].[SecurityStamp], [u].[Sex], [u].[TwoFactorEnabled], [u].[UserName]
+      FROM [AspNetUsers] AS [u]
+      WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action Aiursoft.Developer.Controllers.AppsController.ViewApp (Aiursoft.Developer) in 792.315ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 825.8286ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:61134/images/appdefaulticon.png  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /images/appdefaulticon.png was not modified
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 19.1283ms 304 image/png
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:61134/Apps/ViewApp/4b43b0aee35624cd95b910189b3dc231  
+info: Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler[8]
+      AuthenticationScheme: Identity.Application was successfully authenticated.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method Aiursoft.Developer.Controllers.AppsController.ViewApp (Aiursoft.Developer) with arguments (4b43b0aee35624cd95b910189b3dc231, False) - ModelState is Valid
+info: Microsoft.EntityFrameworkCore.Infrastructure[100403]
+      Entity Framework Core 2.0.0-rtm-26452 initialized 'DeveloperDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [e].[AppId], [e].[AppCategory], [e].[AppCreateTime], [e].[AppDescription], [e].[AppDomain], [e].[AppIconAddress], [e].[AppName], [e].[AppPlatform], [e].[AppSecret], [e].[CreaterId], [e].[DebugMode], [e].[EnableOAuth], [e].[ForceConfirmation], [e].[ForceInputPassword], [e].[LicenseUrl], [e].[PrivacyStatementUrl]
+      FROM [Apps] AS [e]
+      WHERE [e].[AppId] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (1ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(2) [t].[Id], [t].[AccessFailedCount], [t].[AccountCreateTime], [t].[ConcurrencyStamp], [t].[Email], [t].[EmailConfirmed], [t].[HeadImgUrl], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NickName], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[PreferedLanguage], [t].[SecurityStamp], [t].[Sex], [t].[TwoFactorEnabled], [t].[UserName]
+      FROM [AspNetUsers] AS [t]
+      WHERE [t].[UserName] = @__User_Identity_Name_0
+      ORDER BY [t].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT [t.MyApps].[AppId], [t.MyApps].[AppCategory], [t.MyApps].[AppCreateTime], [t.MyApps].[AppDescription], [t.MyApps].[AppDomain], [t.MyApps].[AppIconAddress], [t.MyApps].[AppName], [t.MyApps].[AppPlatform], [t.MyApps].[AppSecret], [t.MyApps].[CreaterId], [t.MyApps].[DebugMode], [t.MyApps].[EnableOAuth], [t.MyApps].[ForceConfirmation], [t.MyApps].[ForceInputPassword], [t.MyApps].[LicenseUrl], [t.MyApps].[PrivacyStatementUrl]
+      FROM [Apps] AS [t.MyApps]
+      INNER JOIN (
+          SELECT TOP(1) [t0].[Id]
+          FROM [AspNetUsers] AS [t0]
+          WHERE [t0].[UserName] = @__User_Identity_Name_0
+          ORDER BY [t0].[Id]
+      ) AS [t1] ON [t.MyApps].[CreaterId] = [t1].[Id]
+      ORDER BY [t1].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [p].[PermissionId], [p].[DeleteAble], [p].[PermissionName]
+      FROM [Permissions] AS [p]
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[@__ThisApp_AppId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT [t].[AppPermissionId], [t].[AppId], [t].[PermissionId]
+      FROM [AppPermissions] AS [t]
+      WHERE [t].[AppId] = @__ThisApp_AppId_0
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.ViewResultExecutor[1]
+      Executing ViewResult, running view at path /Views/Apps/ViewApp.cshtml.
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[AccountCreateTime], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[HeadImgUrl], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NickName], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PreferedLanguage], [u].[SecurityStamp], [u].[Sex], [u].[TwoFactorEnabled], [u].[UserName]
+      FROM [AspNetUsers] AS [u]
+      WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action Aiursoft.Developer.Controllers.AppsController.ViewApp (Aiursoft.Developer) in 780.932ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 814.4217ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:61134/images/appdefaulticon.png  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /images/appdefaulticon.png was not modified
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 18.5085ms 304 image/png
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 POST http://localhost:61134/Apps/ChangeIcon multipart/form-data; boundary=---------------------------1563870137087 3470
+info: Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler[8]
+      AuthenticationScheme: Identity.Application was successfully authenticated.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method Aiursoft.Developer.Controllers.AppsController.ChangeIcon (Aiursoft.Developer) with arguments (4b43b0aee35624cd95b910189b3dc231) - ModelState is Valid
+info: Microsoft.EntityFrameworkCore.Infrastructure[100403]
+      Entity Framework Core 2.0.0-rtm-26452 initialized 'DeveloperDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (7ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [e].[AppId], [e].[AppCategory], [e].[AppCreateTime], [e].[AppDescription], [e].[AppDomain], [e].[AppIconAddress], [e].[AppName], [e].[AppPlatform], [e].[AppSecret], [e].[CreaterId], [e].[DebugMode], [e].[EnableOAuth], [e].[ForceConfirmation], [e].[ForceInputPassword], [e].[LicenseUrl], [e].[PrivacyStatementUrl]
+      FROM [Apps] AS [e]
+      WHERE [e].[AppId] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (2ms) [Parameters=[@p1='?' (Size = 450), @p0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      UPDATE [Apps] SET [AppIconAddress] = @p0
+      WHERE [AppId] = @p1;
+      SELECT @@ROWCOUNT;
+info: Microsoft.AspNetCore.Mvc.RedirectToActionResult[1]
+      Executing RedirectResult, redirecting to /Apps/ViewApp/4b43b0aee35624cd95b910189b3dc231?JustHaveUpdated=True.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action Aiursoft.Developer.Controllers.AppsController.ChangeIcon (Aiursoft.Developer) in 376.8348ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 415.1095ms 302 
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:61134/Apps/ViewApp/4b43b0aee35624cd95b910189b3dc231?JustHaveUpdated=True  
+info: Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler[8]
+      AuthenticationScheme: Identity.Application was successfully authenticated.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method Aiursoft.Developer.Controllers.AppsController.ViewApp (Aiursoft.Developer) with arguments (4b43b0aee35624cd95b910189b3dc231, True) - ModelState is Valid
+info: Microsoft.EntityFrameworkCore.Infrastructure[100403]
+      Entity Framework Core 2.0.0-rtm-26452 initialized 'DeveloperDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [e].[AppId], [e].[AppCategory], [e].[AppCreateTime], [e].[AppDescription], [e].[AppDomain], [e].[AppIconAddress], [e].[AppName], [e].[AppPlatform], [e].[AppSecret], [e].[CreaterId], [e].[DebugMode], [e].[EnableOAuth], [e].[ForceConfirmation], [e].[ForceInputPassword], [e].[LicenseUrl], [e].[PrivacyStatementUrl]
+      FROM [Apps] AS [e]
+      WHERE [e].[AppId] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (1ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(2) [t].[Id], [t].[AccessFailedCount], [t].[AccountCreateTime], [t].[ConcurrencyStamp], [t].[Email], [t].[EmailConfirmed], [t].[HeadImgUrl], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NickName], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[PreferedLanguage], [t].[SecurityStamp], [t].[Sex], [t].[TwoFactorEnabled], [t].[UserName]
+      FROM [AspNetUsers] AS [t]
+      WHERE [t].[UserName] = @__User_Identity_Name_0
+      ORDER BY [t].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT [t.MyApps].[AppId], [t.MyApps].[AppCategory], [t.MyApps].[AppCreateTime], [t.MyApps].[AppDescription], [t.MyApps].[AppDomain], [t.MyApps].[AppIconAddress], [t.MyApps].[AppName], [t.MyApps].[AppPlatform], [t.MyApps].[AppSecret], [t.MyApps].[CreaterId], [t.MyApps].[DebugMode], [t.MyApps].[EnableOAuth], [t.MyApps].[ForceConfirmation], [t.MyApps].[ForceInputPassword], [t.MyApps].[LicenseUrl], [t.MyApps].[PrivacyStatementUrl]
+      FROM [Apps] AS [t.MyApps]
+      INNER JOIN (
+          SELECT TOP(1) [t0].[Id]
+          FROM [AspNetUsers] AS [t0]
+          WHERE [t0].[UserName] = @__User_Identity_Name_0
+          ORDER BY [t0].[Id]
+      ) AS [t1] ON [t.MyApps].[CreaterId] = [t1].[Id]
+      ORDER BY [t1].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [p].[PermissionId], [p].[DeleteAble], [p].[PermissionName]
+      FROM [Permissions] AS [p]
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[@__ThisApp_AppId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT [t].[AppPermissionId], [t].[AppId], [t].[PermissionId]
+      FROM [AppPermissions] AS [t]
+      WHERE [t].[AppId] = @__ThisApp_AppId_0
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.ViewResultExecutor[1]
+      Executing ViewResult, running view at path /Views/Apps/ViewApp.cshtml.
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[AccountCreateTime], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[HeadImgUrl], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NickName], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PreferedLanguage], [u].[SecurityStamp], [u].[Sex], [u].[TwoFactorEnabled], [u].[UserName]
+      FROM [AspNetUsers] AS [u]
+      WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action Aiursoft.Developer.Controllers.AppsController.ViewApp (Aiursoft.Developer) in 179.1319ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 206.5395ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 POST http://localhost:61134/Apps/ChangeIcon multipart/form-data; boundary=---------------------------2255732291147 3470
+info: Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler[8]
+      AuthenticationScheme: Identity.Application was successfully authenticated.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method Aiursoft.Developer.Controllers.AppsController.ChangeIcon (Aiursoft.Developer) with arguments (4b43b0aee35624cd95b910189b3dc231) - ModelState is Valid
+info: Microsoft.EntityFrameworkCore.Infrastructure[100403]
+      Entity Framework Core 2.0.0-rtm-26452 initialized 'DeveloperDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (2ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [e].[AppId], [e].[AppCategory], [e].[AppCreateTime], [e].[AppDescription], [e].[AppDomain], [e].[AppIconAddress], [e].[AppName], [e].[AppPlatform], [e].[AppSecret], [e].[CreaterId], [e].[DebugMode], [e].[EnableOAuth], [e].[ForceConfirmation], [e].[ForceInputPassword], [e].[LicenseUrl], [e].[PrivacyStatementUrl]
+      FROM [Apps] AS [e]
+      WHERE [e].[AppId] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[@p1='?' (Size = 450), @p0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      UPDATE [Apps] SET [AppIconAddress] = @p0
+      WHERE [AppId] = @p1;
+      SELECT @@ROWCOUNT;
+info: Microsoft.AspNetCore.Mvc.RedirectToActionResult[1]
+      Executing RedirectResult, redirecting to /Apps/ViewApp/4b43b0aee35624cd95b910189b3dc231?JustHaveUpdated=True.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action Aiursoft.Developer.Controllers.AppsController.ChangeIcon (Aiursoft.Developer) in 17550.5917ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 17578.7161ms 302 
+warn: Microsoft.AspNetCore.Server.Kestrel[22]
+      Heartbeat took longer than "00:00:01" at "12/08/2017 09:44:26 +00:00".
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:61134/Apps/ViewApp/4b43b0aee35624cd95b910189b3dc231?JustHaveUpdated=True  
+info: Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler[8]
+      AuthenticationScheme: Identity.Application was successfully authenticated.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method Aiursoft.Developer.Controllers.AppsController.ViewApp (Aiursoft.Developer) with arguments (4b43b0aee35624cd95b910189b3dc231, True) - ModelState is Valid
+info: Microsoft.EntityFrameworkCore.Infrastructure[100403]
+      Entity Framework Core 2.0.0-rtm-26452 initialized 'DeveloperDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [e].[AppId], [e].[AppCategory], [e].[AppCreateTime], [e].[AppDescription], [e].[AppDomain], [e].[AppIconAddress], [e].[AppName], [e].[AppPlatform], [e].[AppSecret], [e].[CreaterId], [e].[DebugMode], [e].[EnableOAuth], [e].[ForceConfirmation], [e].[ForceInputPassword], [e].[LicenseUrl], [e].[PrivacyStatementUrl]
+      FROM [Apps] AS [e]
+      WHERE [e].[AppId] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(2) [t].[Id], [t].[AccessFailedCount], [t].[AccountCreateTime], [t].[ConcurrencyStamp], [t].[Email], [t].[EmailConfirmed], [t].[HeadImgUrl], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NickName], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[PreferedLanguage], [t].[SecurityStamp], [t].[Sex], [t].[TwoFactorEnabled], [t].[UserName]
+      FROM [AspNetUsers] AS [t]
+      WHERE [t].[UserName] = @__User_Identity_Name_0
+      ORDER BY [t].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (1ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT [t.MyApps].[AppId], [t.MyApps].[AppCategory], [t.MyApps].[AppCreateTime], [t.MyApps].[AppDescription], [t.MyApps].[AppDomain], [t.MyApps].[AppIconAddress], [t.MyApps].[AppName], [t.MyApps].[AppPlatform], [t.MyApps].[AppSecret], [t.MyApps].[CreaterId], [t.MyApps].[DebugMode], [t.MyApps].[EnableOAuth], [t.MyApps].[ForceConfirmation], [t.MyApps].[ForceInputPassword], [t.MyApps].[LicenseUrl], [t.MyApps].[PrivacyStatementUrl]
+      FROM [Apps] AS [t.MyApps]
+      INNER JOIN (
+          SELECT TOP(1) [t0].[Id]
+          FROM [AspNetUsers] AS [t0]
+          WHERE [t0].[UserName] = @__User_Identity_Name_0
+          ORDER BY [t0].[Id]
+      ) AS [t1] ON [t.MyApps].[CreaterId] = [t1].[Id]
+      ORDER BY [t1].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [p].[PermissionId], [p].[DeleteAble], [p].[PermissionName]
+      FROM [Permissions] AS [p]
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[@__ThisApp_AppId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT [t].[AppPermissionId], [t].[AppId], [t].[PermissionId]
+      FROM [AppPermissions] AS [t]
+      WHERE [t].[AppId] = @__ThisApp_AppId_0
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.ViewResultExecutor[1]
+      Executing ViewResult, running view at path /Views/Apps/ViewApp.cshtml.
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[AccountCreateTime], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[HeadImgUrl], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NickName], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PreferedLanguage], [u].[SecurityStamp], [u].[Sex], [u].[TwoFactorEnabled], [u].[UserName]
+      FROM [AspNetUsers] AS [u]
+      WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action Aiursoft.Developer.Controllers.AppsController.ViewApp (Aiursoft.Developer) in 210.6043ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 239.1657ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:61134/Apps/ViewApp/4b43b0aee35624cd95b910189b3dc231?JustHaveUpdated=True  
+info: Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler[8]
+      AuthenticationScheme: Identity.Application was successfully authenticated.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method Aiursoft.Developer.Controllers.AppsController.ViewApp (Aiursoft.Developer) with arguments (4b43b0aee35624cd95b910189b3dc231, True) - ModelState is Valid
+info: Microsoft.EntityFrameworkCore.Infrastructure[100403]
+      Entity Framework Core 2.0.0-rtm-26452 initialized 'DeveloperDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [e].[AppId], [e].[AppCategory], [e].[AppCreateTime], [e].[AppDescription], [e].[AppDomain], [e].[AppIconAddress], [e].[AppName], [e].[AppPlatform], [e].[AppSecret], [e].[CreaterId], [e].[DebugMode], [e].[EnableOAuth], [e].[ForceConfirmation], [e].[ForceInputPassword], [e].[LicenseUrl], [e].[PrivacyStatementUrl]
+      FROM [Apps] AS [e]
+      WHERE [e].[AppId] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (2ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(2) [t].[Id], [t].[AccessFailedCount], [t].[AccountCreateTime], [t].[ConcurrencyStamp], [t].[Email], [t].[EmailConfirmed], [t].[HeadImgUrl], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NickName], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[PreferedLanguage], [t].[SecurityStamp], [t].[Sex], [t].[TwoFactorEnabled], [t].[UserName]
+      FROM [AspNetUsers] AS [t]
+      WHERE [t].[UserName] = @__User_Identity_Name_0
+      ORDER BY [t].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (1ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT [t.MyApps].[AppId], [t.MyApps].[AppCategory], [t.MyApps].[AppCreateTime], [t.MyApps].[AppDescription], [t.MyApps].[AppDomain], [t.MyApps].[AppIconAddress], [t.MyApps].[AppName], [t.MyApps].[AppPlatform], [t.MyApps].[AppSecret], [t.MyApps].[CreaterId], [t.MyApps].[DebugMode], [t.MyApps].[EnableOAuth], [t.MyApps].[ForceConfirmation], [t.MyApps].[ForceInputPassword], [t.MyApps].[LicenseUrl], [t.MyApps].[PrivacyStatementUrl]
+      FROM [Apps] AS [t.MyApps]
+      INNER JOIN (
+          SELECT TOP(1) [t0].[Id]
+          FROM [AspNetUsers] AS [t0]
+          WHERE [t0].[UserName] = @__User_Identity_Name_0
+          ORDER BY [t0].[Id]
+      ) AS [t1] ON [t.MyApps].[CreaterId] = [t1].[Id]
+      ORDER BY [t1].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [p].[PermissionId], [p].[DeleteAble], [p].[PermissionName]
+      FROM [Permissions] AS [p]
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[@__ThisApp_AppId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT [t].[AppPermissionId], [t].[AppId], [t].[PermissionId]
+      FROM [AppPermissions] AS [t]
+      WHERE [t].[AppId] = @__ThisApp_AppId_0
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.ViewResultExecutor[1]
+      Executing ViewResult, running view at path /Views/Apps/ViewApp.cshtml.
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[AccountCreateTime], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[HeadImgUrl], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NickName], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PreferedLanguage], [u].[SecurityStamp], [u].[Sex], [u].[TwoFactorEnabled], [u].[UserName]
+      FROM [AspNetUsers] AS [u]
+      WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action Aiursoft.Developer.Controllers.AppsController.ViewApp (Aiursoft.Developer) in 760.6017ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 789.0128ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:61134/Apps/AllApps  
+info: Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler[8]
+      AuthenticationScheme: Identity.Application was successfully authenticated.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method Aiursoft.Developer.Controllers.AppsController.AllApps (Aiursoft.Developer) with arguments ((null)) - ModelState is Valid
+info: Microsoft.EntityFrameworkCore.Infrastructure[100403]
+      Entity Framework Core 2.0.0-rtm-26452 initialized 'DeveloperDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (2ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(2) [t].[Id], [t].[AccessFailedCount], [t].[AccountCreateTime], [t].[ConcurrencyStamp], [t].[Email], [t].[EmailConfirmed], [t].[HeadImgUrl], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NickName], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[PreferedLanguage], [t].[SecurityStamp], [t].[Sex], [t].[TwoFactorEnabled], [t].[UserName]
+      FROM [AspNetUsers] AS [t]
+      WHERE [t].[UserName] = @__User_Identity_Name_0
+      ORDER BY [t].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (2ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT [t.MyApps].[AppId], [t.MyApps].[AppCategory], [t.MyApps].[AppCreateTime], [t.MyApps].[AppDescription], [t.MyApps].[AppDomain], [t.MyApps].[AppIconAddress], [t.MyApps].[AppName], [t.MyApps].[AppPlatform], [t.MyApps].[AppSecret], [t.MyApps].[CreaterId], [t.MyApps].[DebugMode], [t.MyApps].[EnableOAuth], [t.MyApps].[ForceConfirmation], [t.MyApps].[ForceInputPassword], [t.MyApps].[LicenseUrl], [t.MyApps].[PrivacyStatementUrl]
+      FROM [Apps] AS [t.MyApps]
+      INNER JOIN (
+          SELECT TOP(1) [t0].[Id]
+          FROM [AspNetUsers] AS [t0]
+          WHERE [t0].[UserName] = @__User_Identity_Name_0
+          ORDER BY [t0].[Id]
+      ) AS [t1] ON [t.MyApps].[CreaterId] = [t1].[Id]
+      ORDER BY [t1].[Id]
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.ViewResultExecutor[1]
+      Executing ViewResult, running view at path /Views/Apps/AllApps.cshtml.
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[@__cuser_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT [t].[AppId], [t].[AppCategory], [t].[AppCreateTime], [t].[AppDescription], [t].[AppDomain], [t].[AppIconAddress], [t].[AppName], [t].[AppPlatform], [t].[AppSecret], [t].[CreaterId], [t].[DebugMode], [t].[EnableOAuth], [t].[ForceConfirmation], [t].[ForceInputPassword], [t].[LicenseUrl], [t].[PrivacyStatementUrl]
+      FROM [Apps] AS [t]
+      WHERE [t].[CreaterId] = @__cuser_Id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[AccountCreateTime], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[HeadImgUrl], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NickName], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PreferedLanguage], [u].[SecurityStamp], [u].[Sex], [u].[TwoFactorEnabled], [u].[UserName]
+      FROM [AspNetUsers] AS [u]
+      WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action Aiursoft.Developer.Controllers.AppsController.AllApps (Aiursoft.Developer) in 108.7406ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 137.6111ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:61134/Apps/ViewApp/4b43b0aee35624cd95b910189b3dc231  
+info: Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler[8]
+      AuthenticationScheme: Identity.Application was successfully authenticated.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method Aiursoft.Developer.Controllers.AppsController.ViewApp (Aiursoft.Developer) with arguments (4b43b0aee35624cd95b910189b3dc231, False) - ModelState is Valid
+info: Microsoft.EntityFrameworkCore.Infrastructure[100403]
+      Entity Framework Core 2.0.0-rtm-26452 initialized 'DeveloperDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [e].[AppId], [e].[AppCategory], [e].[AppCreateTime], [e].[AppDescription], [e].[AppDomain], [e].[AppIconAddress], [e].[AppName], [e].[AppPlatform], [e].[AppSecret], [e].[CreaterId], [e].[DebugMode], [e].[EnableOAuth], [e].[ForceConfirmation], [e].[ForceInputPassword], [e].[LicenseUrl], [e].[PrivacyStatementUrl]
+      FROM [Apps] AS [e]
+      WHERE [e].[AppId] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(2) [t].[Id], [t].[AccessFailedCount], [t].[AccountCreateTime], [t].[ConcurrencyStamp], [t].[Email], [t].[EmailConfirmed], [t].[HeadImgUrl], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NickName], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[PreferedLanguage], [t].[SecurityStamp], [t].[Sex], [t].[TwoFactorEnabled], [t].[UserName]
+      FROM [AspNetUsers] AS [t]
+      WHERE [t].[UserName] = @__User_Identity_Name_0
+      ORDER BY [t].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (1ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT [t.MyApps].[AppId], [t.MyApps].[AppCategory], [t.MyApps].[AppCreateTime], [t.MyApps].[AppDescription], [t.MyApps].[AppDomain], [t.MyApps].[AppIconAddress], [t.MyApps].[AppName], [t.MyApps].[AppPlatform], [t.MyApps].[AppSecret], [t.MyApps].[CreaterId], [t.MyApps].[DebugMode], [t.MyApps].[EnableOAuth], [t.MyApps].[ForceConfirmation], [t.MyApps].[ForceInputPassword], [t.MyApps].[LicenseUrl], [t.MyApps].[PrivacyStatementUrl]
+      FROM [Apps] AS [t.MyApps]
+      INNER JOIN (
+          SELECT TOP(1) [t0].[Id]
+          FROM [AspNetUsers] AS [t0]
+          WHERE [t0].[UserName] = @__User_Identity_Name_0
+          ORDER BY [t0].[Id]
+      ) AS [t1] ON [t.MyApps].[CreaterId] = [t1].[Id]
+      ORDER BY [t1].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [p].[PermissionId], [p].[DeleteAble], [p].[PermissionName]
+      FROM [Permissions] AS [p]
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[@__ThisApp_AppId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT [t].[AppPermissionId], [t].[AppId], [t].[PermissionId]
+      FROM [AppPermissions] AS [t]
+      WHERE [t].[AppId] = @__ThisApp_AppId_0
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.ViewResultExecutor[1]
+      Executing ViewResult, running view at path /Views/Apps/ViewApp.cshtml.
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[AccountCreateTime], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[HeadImgUrl], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NickName], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PreferedLanguage], [u].[SecurityStamp], [u].[Sex], [u].[TwoFactorEnabled], [u].[UserName]
+      FROM [AspNetUsers] AS [u]
+      WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action Aiursoft.Developer.Controllers.AppsController.ViewApp (Aiursoft.Developer) in 182.0556ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 209.749ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:61134/Apps/AllApps  
+info: Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler[8]
+      AuthenticationScheme: Identity.Application was successfully authenticated.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method Aiursoft.Developer.Controllers.AppsController.AllApps (Aiursoft.Developer) with arguments ((null)) - ModelState is Valid
+info: Microsoft.EntityFrameworkCore.Infrastructure[100403]
+      Entity Framework Core 2.0.0-rtm-26452 initialized 'DeveloperDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (2ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(2) [t].[Id], [t].[AccessFailedCount], [t].[AccountCreateTime], [t].[ConcurrencyStamp], [t].[Email], [t].[EmailConfirmed], [t].[HeadImgUrl], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NickName], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[PreferedLanguage], [t].[SecurityStamp], [t].[Sex], [t].[TwoFactorEnabled], [t].[UserName]
+      FROM [AspNetUsers] AS [t]
+      WHERE [t].[UserName] = @__User_Identity_Name_0
+      ORDER BY [t].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (1ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT [t.MyApps].[AppId], [t.MyApps].[AppCategory], [t.MyApps].[AppCreateTime], [t.MyApps].[AppDescription], [t.MyApps].[AppDomain], [t.MyApps].[AppIconAddress], [t.MyApps].[AppName], [t.MyApps].[AppPlatform], [t.MyApps].[AppSecret], [t.MyApps].[CreaterId], [t.MyApps].[DebugMode], [t.MyApps].[EnableOAuth], [t.MyApps].[ForceConfirmation], [t.MyApps].[ForceInputPassword], [t.MyApps].[LicenseUrl], [t.MyApps].[PrivacyStatementUrl]
+      FROM [Apps] AS [t.MyApps]
+      INNER JOIN (
+          SELECT TOP(1) [t0].[Id]
+          FROM [AspNetUsers] AS [t0]
+          WHERE [t0].[UserName] = @__User_Identity_Name_0
+          ORDER BY [t0].[Id]
+      ) AS [t1] ON [t.MyApps].[CreaterId] = [t1].[Id]
+      ORDER BY [t1].[Id]
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.ViewResultExecutor[1]
+      Executing ViewResult, running view at path /Views/Apps/AllApps.cshtml.
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[@__cuser_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT [t].[AppId], [t].[AppCategory], [t].[AppCreateTime], [t].[AppDescription], [t].[AppDomain], [t].[AppIconAddress], [t].[AppName], [t].[AppPlatform], [t].[AppSecret], [t].[CreaterId], [t].[DebugMode], [t].[EnableOAuth], [t].[ForceConfirmation], [t].[ForceInputPassword], [t].[LicenseUrl], [t].[PrivacyStatementUrl]
+      FROM [Apps] AS [t]
+      WHERE [t].[CreaterId] = @__cuser_Id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[AccountCreateTime], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[HeadImgUrl], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NickName], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PreferedLanguage], [u].[SecurityStamp], [u].[Sex], [u].[TwoFactorEnabled], [u].[UserName]
+      FROM [AspNetUsers] AS [u]
+      WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action Aiursoft.Developer.Controllers.AppsController.AllApps (Aiursoft.Developer) in 90.3968ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 115.3337ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:61134/Apps/CreateApp  
+info: Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler[8]
+      AuthenticationScheme: Identity.Application was successfully authenticated.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method Aiursoft.Developer.Controllers.AppsController.CreateApp (Aiursoft.Developer) with arguments ((null)) - ModelState is Valid
+info: Microsoft.EntityFrameworkCore.Infrastructure[100403]
+      Entity Framework Core 2.0.0-rtm-26452 initialized 'DeveloperDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (1ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(2) [t].[Id], [t].[AccessFailedCount], [t].[AccountCreateTime], [t].[ConcurrencyStamp], [t].[Email], [t].[EmailConfirmed], [t].[HeadImgUrl], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NickName], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[PreferedLanguage], [t].[SecurityStamp], [t].[Sex], [t].[TwoFactorEnabled], [t].[UserName]
+      FROM [AspNetUsers] AS [t]
+      WHERE [t].[UserName] = @__User_Identity_Name_0
+      ORDER BY [t].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT [t.MyApps].[AppId], [t.MyApps].[AppCategory], [t.MyApps].[AppCreateTime], [t.MyApps].[AppDescription], [t.MyApps].[AppDomain], [t.MyApps].[AppIconAddress], [t.MyApps].[AppName], [t.MyApps].[AppPlatform], [t.MyApps].[AppSecret], [t.MyApps].[CreaterId], [t.MyApps].[DebugMode], [t.MyApps].[EnableOAuth], [t.MyApps].[ForceConfirmation], [t.MyApps].[ForceInputPassword], [t.MyApps].[LicenseUrl], [t.MyApps].[PrivacyStatementUrl]
+      FROM [Apps] AS [t.MyApps]
+      INNER JOIN (
+          SELECT TOP(1) [t0].[Id]
+          FROM [AspNetUsers] AS [t0]
+          WHERE [t0].[UserName] = @__User_Identity_Name_0
+          ORDER BY [t0].[Id]
+      ) AS [t1] ON [t.MyApps].[CreaterId] = [t1].[Id]
+      ORDER BY [t1].[Id]
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.ViewResultExecutor[1]
+      Executing ViewResult, running view at path /Views/Apps/CreateApp.cshtml.
+info: Microsoft.EntityFrameworkCore.Database.Command[200101]
+      Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[AccountCreateTime], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[HeadImgUrl], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NickName], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PreferedLanguage], [u].[SecurityStamp], [u].[Sex], [u].[TwoFactorEnabled], [u].[UserName]
+      FROM [AspNetUsers] AS [u]
+      WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action Aiursoft.Developer.Controllers.AppsController.CreateApp (Aiursoft.Developer) in 564.6371ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 601.4889ms 200 text/html; charset=utf-8
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
