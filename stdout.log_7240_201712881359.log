@@ -1,8 +1,0 @@
-AppId=4b43b0aee35624cd95b910189b3dc231, AppSecret=fbade9e36a3f36d3d676c1b808451dd7
-Using development database!
-info: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[0]
-      User profile is available. Using 'C:\Users\Anduin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
-Hosting environment: Development
-Content root path: D:\WorkSpace\Developer
-Now listening on: http://localhost:10829
-Application started. Press Ctrl+C to shut down.
