@@ -24,8 +24,6 @@ namespace Aiursoft.Developer
     {
         public IConfiguration Configuration { get; }
         public bool IsDevelopment { get; set; }
-        public string AppId {get;set;}
-        public string AppSecret{get;set;}
 
         public Startup(IConfiguration configuration, IHostingEnvironment env)
         {
@@ -39,15 +37,6 @@ namespace Aiursoft.Developer
 
         public void ConfigureServices(IServiceCollection services)
         {
-            AppId = Configuration["developerAppId"];
-            AppSecret = Configuration["developerAppSecret"];
-            Console.WriteLine($"AppId={AppId}, AppSecret={AppSecret}");
-            if (string.IsNullOrWhiteSpace(AppId) || string.IsNullOrWhiteSpace(AppSecret))
-            {
-                throw new InvalidOperationException("Did not get appId and appSecret from configuration!");
-            }
-
-
             services.ConnectToAiursoftDatabase<DeveloperDbContext>("Developer", IsDevelopment);
             services.AddIdentity<DeveloperUser, IdentityRole>()
                 .AddEntityFrameworkStores<DeveloperDbContext>()
@@ -61,18 +50,6 @@ namespace Aiursoft.Developer
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, DeveloperDbContext dbContext)
         {
-            var SupportedCultures = new CultureInfo[]
-            {
-                new CultureInfo("en"),
-                new CultureInfo("zh")
-            };
-            app.UseRequestLocalization(new RequestLocalizationOptions
-            {
-                DefaultRequestCulture = new RequestCulture("en"),
-                SupportedCultures = SupportedCultures,
-                SupportedUICultures = SupportedCultures
-            });
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -82,9 +59,10 @@ namespace Aiursoft.Developer
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+            app.UseAiursoftSupportedCultures();
+            app.UseAiursoftAuthenticationFromConfiguration(Configuration, "Developer");
             app.UseStaticFiles();
             app.UseAuthentication()
-            .UseAiursoftAuthentication(appId: AppId, appSecret: AppSecret)
             .UseMvcWithDefaultRoute();
         }
     }

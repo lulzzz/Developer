@@ -30,8 +30,14 @@ namespace Aiursoft.Developer.Controllers
             _dbContext = _context;
         }
 
-        [AiurForceAuth(preferController: "", preferAction: "", justTry: false)]
+        [AiurForceAuth(preferController: "", preferAction: "", justTry: false, register: false)]
         public IActionResult GoAuth()
+        {
+            throw new NotImplementedException();
+        }
+
+        [AiurForceAuth(preferController: "", preferAction: "", justTry: false, register: true)]
+        public IActionResult GoRegister()
         {
             throw new NotImplementedException();
         }
