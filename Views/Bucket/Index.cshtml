@@ -4,7 +4,16 @@
     Layout = "_AppLayout";
 }
 
-<div class="main-content">
+<div class="container-fluid">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a asp-controller="Apps" asp-action="Index">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item">
+            <a asp-controller="Bucket" asp-action="Index">Buckets</a>
+        </li>
+        <li class="breadcrumb-item active">@ViewData["Title"]</li>
+    </ol>
     <div class="row row-inline-block small-spacing">
         <div class="col-xs-12">
             <div class="box-content bordered warning">
@@ -60,7 +69,4 @@
         </div>
     </div>
 
-    @{
-        await Html.RenderPartialAsync("_footer");
-    }
 </div>

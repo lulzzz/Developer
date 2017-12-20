@@ -4,7 +4,16 @@
     Layout = "_AppLayout";
 }
 
-<div class="main-content">
+<div class="container-fluid">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a asp-controller="Apps" asp-action="Index">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item">
+            <a asp-controller="Bucket" asp-action="Index">Buckets</a>
+        </li>
+        <li class="breadcrumb-item active">@ViewData["Title"]</li>
+    </ol>
     @if (!Model.ModelStateValid)
     {
         <div class="alert alert-danger alert-dismissible" role="alert">
@@ -53,7 +62,7 @@
                     </div>
 
                     <div class="col-xs-12 margin-top-30">
-                        <button class="btn btn-primary btn-sm" type="submit" >Update</button>
+                        <button class="btn btn-primary btn-sm" type="submit">Update</button>
                         <a class="btn btn-warning btn-sm" asp-controller="Files" asp-action="ViewFiles" asp-route-id="@Model.BucketId">View Files</a>
                         <a class="btn btn-info btn-sm" asp-controller="Apps" asp-action="ViewApp" asp-route-id="@Model.AppId">Back to app</a>
                     </div>
@@ -61,7 +70,4 @@
             </div>
         </div>
     </div>
-    @{
-        await Html.RenderPartialAsync("_footer");
-    }
 </div>
