@@ -22,62 +22,67 @@
             <div asp-validation-summary="All"></div>
         </div>
     }
-    <div class="row row-inline-block small-spacing">
-        <div class="col-xs-12">
-            <div class="box-content">
-                <form asp-controller="Bucket" asp-action="CreateBucket" method="post" class="row">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label asp-for="AppId"></label>
-                            <select asp-for="AppId" class="form-control" asp-items="@ViewBag.PartId"></select>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label asp-for="NewBucketName"></label>
-                            <input asp-for="NewBucketName" type="text" class="form-control" placeholder="Enter your new bucket name...">
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="switch success">
-                                    <input asp-for="OpenToRead" type="checkbox">
-                                    <label asp-for="OpenToRead"></label>
-                                </div>
-                            </div>
-                            <div class="col-md-9">
-                                <p>Allow anyone even without access token to access all your files in that bucket.</p>
-                            </div>
-                        </div>
-                        <hr />
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="switch warning">
-                                    <input type="checkbox" asp-for="OpenToUpload">
-                                    <label asp-for="OpenToUpload"></label>
-                                </div>
-                            </div>
-                            <div class="col-md-9">
-                                <p>Allow anyone even without access token to upload files to that bucket.</p>
-                            </div>
-                        </div>
-                        <hr />
-                    </div>
 
-                    <div class="col-xs-12 margin-top-30">
-                        <button type="submit" class="btn btn-primary btn-sm">Create</button>
-                        <button type="reset" class="btn btn-danger btn-sm" id="cleartoasts">Clear</button>
-                        @if (!string.IsNullOrEmpty(Model.AppId))
-                        {
-                            <a class="btn btn-info btn-sm" asp-controller="Apps" asp-action="ViewApp" asp-route-id="@Model.AppId">Back to app</a>
-                        }
-                        else
-                        {
-                            <a class="btn btn-info btn-sm" asp-controller="Bucket" asp-action="Index">All Buckets</a>
-                        }
-                    </div>
-                </form>
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fa fa-inbox"></i>
+            New Bucket Info
+        </div>
+        <div class="card-body">
+            <div class="col-xs-12">
+                    <form asp-controller="Bucket" asp-action="CreateBucket" method="post" class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="AppId"></label>
+                                <select asp-for="AppId" class="form-control" asp-items="@ViewBag.PartId"></select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="NewBucketName"></label>
+                                <input asp-for="NewBucketName" type="text" class="form-control" placeholder="Enter your new bucket name...">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="switch success">
+                                        <input asp-for="OpenToRead" type="checkbox">
+                                        <label asp-for="OpenToRead"></label>
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <p>Allow anyone even without access token to access all your files in that bucket.</p>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="switch warning">
+                                        <input type="checkbox" asp-for="OpenToUpload">
+                                        <label asp-for="OpenToUpload"></label>
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <p>Allow anyone even without access token to upload files to that bucket.</p>
+                                </div>
+                            </div>
+                            <hr />
+                        </div>
+
+                        <div class="col-xs-12 margin-top-30">
+                            <button type="submit" class="btn btn-primary btn">Create</button>
+                            <button type="reset" class="btn btn-danger btn" id="cleartoasts">Clear</button>
+                            @if (!string.IsNullOrEmpty(Model.AppId))
+                            {
+                                <a class="btn btn-info btn" asp-controller="Apps" asp-action="ViewApp" asp-route-id="@Model.AppId">Back to app</a>
+                            }
+                            else
+                            {
+                                <a class="btn btn-info btn" asp-controller="Bucket" asp-action="Index">All Buckets</a>
+                            }
+                        </div>
+                    </form>
             </div>
         </div>
     </div>

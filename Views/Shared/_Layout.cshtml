@@ -63,7 +63,8 @@
                                     <img class="rounded" src="@((await UserManager.FindByNameAsync(User.Identity.Name)).HeadImgUrl)?w=200&h=200" style="width:20px;height:20px;" />
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="dropdown02">
-                                    <a class="dropdown-item" href="@Values.AccountServerAddress">Profile</a>
+                                    <a class="dropdown-item" asp-controller="Apps" asp-action="Index">Dashboard</a>
+                                    <a class="dropdown-item" href="@Values.AccountServerAddress">Settings</a>
                                     <a class="dropdown-item" href="javascript:$('#logoutForm').submit()">Sign out</a>
                                 </div>
                             </li>
@@ -115,6 +116,6 @@
     <environment exclude="Development">
         <script src="@Values.CdnServerAddress/dist/AiurUI.min.js" asp-append-version="true"></script>
     </environment>
-    @RenderSection("Scripts", required: false)
+    @RenderSection("js", required: false)
 </body>
 </html>

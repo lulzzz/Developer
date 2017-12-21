@@ -4,7 +4,16 @@
     Layout = "_AppLayout";
 }
 
-<div class="main-content">
+<div class="container-fluid">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a asp-controller="Apps" asp-action="Index">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item">
+            <a asp-controller="Files" asp-action="Index">Files</a>
+        </li>
+        <li class="breadcrumb-item active">@ViewData["Title"]</li>
+    </ol>
     @if (!Model.ModelStateValid)
     {
         <div class="alert alert-danger alert-dismissible" role="alert">
@@ -13,32 +22,24 @@
             <div asp-validation-summary="All"></div>
         </div>
     }
-    <div class="row row-inline-block small-spacing">
-        <div class="col-xs-12">
-            <form class="box-content" asp-controller="Files" asp-action="UploadFile" method="post" enctype="multipart/form-data">
-                <input type="hidden" asp-for="AppId" />
-                <input type="hidden" asp-for="BucketId" />
-                <h4 class="box-title">Upload File To @Model.BucketName</h4>
-                <div class="dropdown js__drop_down">
-                    <a href="#" class="dropdown-icon glyphicon glyphicon-option-vertical js__drop_down_button"></a>
-                    <ul class="sub-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else there</a></li>
-                        <li class="split"></li>
-                        <li><a href="#">Separated link</a></li>
-                    </ul>
-                </div>
-                <input type="file" name="file" class="dropify" data-max-file-size="30M" />
-                <p class="help margin-top-10">Only 30M max.</p>
-                <div class="col-xs-12 margin-top-30">
-                    <button type="submit" class="btn btn-primary btn-sm">Upload</button>
-                    <a class="btn btn-info btn-sm" asp-controller="Files" asp-action="ViewFiles" asp-route-id="@Model.BucketId">Back to files</a>
-                </div>
-            </form>
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fa fa-upload"></i>
+            Upload File To @Model.BucketName
+        </div>
+        <div class="card-body">
+            <div class="col-xs-12">
+                <form class="box-content" asp-controller="Files" asp-action="UploadFile" method="post" enctype="multipart/form-data">
+                    <input type="hidden" asp-for="AppId" />
+                    <input type="hidden" asp-for="BucketId" />
+                    <input type="file" name="file" class="dropify" data-max-file-size="30M" />
+                    <p class="help margin-top-10">Only 30M max.</p>
+                    <div class="col-xs-12 margin-top-30">
+                        <button type="submit" class="btn btn-primary">Upload</button>
+                        <a class="btn btn-info" asp-controller="Files" asp-action="ViewFiles" asp-route-id="@Model.BucketId">Back to files</a>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-    @{
-        await Html.RenderPartialAsync("_footer");
-    }
 </div>
