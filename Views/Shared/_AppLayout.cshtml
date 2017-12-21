@@ -44,10 +44,16 @@
                         </span>
                     </a>
                 </li>
-                <li class="nav-item @(Model.ActivePanel == 2 ? "active":string.Empty)" data-toggle="tooltip" data-placement="right" title="Buckets">
+                <li class="nav-item @(Model.ActivePanel == 2 ? " active":string.Empty)" data-toggle="tooltip" data-placement="right" title="Buckets">
                     <a class="nav-link" asp-controller="Bucket" asp-action="Index">
                         <i class="fa fa-fw fa-inbox"></i>
                         <span class="nav-link-text">Buckets</span>
+                    </a>
+                </li>
+                <li class="nav-item @(Model.ActivePanel == 3 ? "active":string.Empty)" data-toggle="tooltip" data-placement="right" title="Buckets">
+                    <a class="nav-link" asp-controller="Bucket" asp-action="Index">
+                        <i class="fa fa-fw fa-random"></i>
+                        <span class="nav-link-text">Message Queue</span>
                     </a>
                 </li>
             </ul>
