@@ -38,6 +38,13 @@ namespace Aiursoft.Developer.Controllers
             _dbContext = _context;
         }
 
+        public async Task<IActionResult> Index()
+        {
+            var user = await GetCurrentUserAsync();
+            var model = new IndexViewModel(user);
+            return View(model);
+        }
+
         public async Task<IActionResult> ViewFiles(int id)//Bucket Id
         {
             var cuser = await GetCurrentUserAsync();
