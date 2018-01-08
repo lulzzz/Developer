@@ -46,14 +46,17 @@
                             <div class="form-group">
                                 <label asp-for="AppDescription"></label>
                                 <textarea class="form-control" asp-for="AppDescription" rows="3" placeholder="Enter a short description about your app..."></textarea>
+                                <span asp-validation-for="AppDescription" class="text-danger"></span>
                             </div>
                             <div class="form-group">
                                 <label asp-for="AppId"></label>
                                 <input asp-for="AppId" type="text" class="form-control" readonly="readonly">
+                                <span asp-validation-for="AppId" class="text-danger"></span>
                             </div>
                             <div class="form-group">
                                 <label asp-for="AppSecret"></label>
                                 <input asp-for="AppSecret" type="text" class="form-control" readonly="readonly">
+                                <span asp-validation-for="AppSecret" class="text-danger"></span>
                             </div>
                             <div class="form-group">
                                 <label asp-for="AppPlatform"></label>
@@ -88,10 +91,12 @@
                             <div class="form-group">
                                 <label asp-for="PrivacyStatementUrl"></label>
                                 <input asp-for="PrivacyStatementUrl" type="url" class="form-control">
+                                <span asp-validation-for="PrivacyStatementUrl" class="text-danger"></span>
                             </div>
                             <div class="form-group">
                                 <label asp-for="LicenseUrl"></label>
                                 <input asp-for="LicenseUrl" type="url" class="form-control">
+                                <span asp-validation-for="LicenseUrl" class="text-danger"></span>
                             </div>
                             <button type="submit" class="btn btn-primary">Update Profile</button>
                             <a class="btn btn-info" asp-controller="Apps" asp-action="AllApps">Back to List</a>
@@ -171,6 +176,7 @@
                     <div class="form-group">
                         <label asp-for="AppDomain"></label>
                         <input asp-for="AppDomain" type="text" class="form-control" placeholder="Enter your valid app domain. For example: google.com">
+                        <span asp-validation-for="AppDomain" class="text-danger"></span>
                     </div>
                     <button type="submit" class="btn btn-primary">Update OAuth Settings</button>
                     <a class="btn btn-info" asp-controller="Apps" asp-action="AllApps">Back to list</a>

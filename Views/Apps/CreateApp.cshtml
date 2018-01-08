@@ -39,6 +39,7 @@
                         <div class="form-group">
                             <label asp-for="AppDescription"></label>
                             <textarea class="form-control" asp-for="AppDescription" rows="3" placeholder="Enter a short description about your app..."></textarea>
+                            <span asp-validation-for="AppDescription" class="text-danger"></span>
                         </div>
                         <div class="form-group">
                             <label asp-for="AppPlatform"></label>
