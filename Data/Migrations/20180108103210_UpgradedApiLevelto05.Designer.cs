@@ -12,9 +12,10 @@ using System;
 namespace Aiursoft.Developer.Data.Migrations
 {
     [DbContext(typeof(DeveloperDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180108103210_UpgradedApiLevelto05")]
+    partial class UpgradedApiLevelto05
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
