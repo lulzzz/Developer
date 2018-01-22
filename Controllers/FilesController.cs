@@ -61,6 +61,20 @@ namespace Aiursoft.Developer.Controllers
             return View(model);
         }
 
+        public async Task<IActionResult> GenerateLink(int id)
+        {
+            var cuser = await GetCurrentUserAsync();
+            var fileinfo = await ApiService.ViewOneFileAsync(id);
+            var bucketInfo = await ApiService.ViewBucketDetailAsync(fileinfo.File.BucketId);
+            var app = await _dbContext.Apps.FindAsync(bucketInfo.BelongingAppId);
+            if (bucketInfo.BelongingAppId != app.AppId)
+            {
+                return Unauthorized();
+            }
+            var secret = SecretService.GenerateAsync(id, await AppsContainer.AccessToken(app.AppId, app.AppSecret)());
+            return Json(secret);
+        }
+
         public async Task<IActionResult> DeleteFile(int id)
         {
             var cuser = await GetCurrentUserAsync();
