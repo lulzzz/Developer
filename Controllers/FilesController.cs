@@ -71,8 +71,13 @@ namespace Aiursoft.Developer.Controllers
             {
                 return Unauthorized();
             }
-            var secret = SecretService.GenerateAsync(id, await AppsContainer.AccessToken(app.AppId, app.AppSecret)());
-            return Json(secret);
+            var secret = await SecretService.GenerateAsync(id, await AppsContainer.AccessToken(app.AppId, app.AppSecret)());
+            var model = new GenerateLinkViewModel(cuser)
+            {
+                Address = secret.Value,
+                BucketId = bucketInfo.BucketId
+            };
+            return View(model);
         }
 
         public async Task<IActionResult> DeleteFile(int id)
