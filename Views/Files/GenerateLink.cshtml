@@ -25,21 +25,31 @@
         </div>
         <div class="card-body">
             <div class="col-xs-12">
-                    <div class="box-content bordered danger">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label asp-for="Address"></label>
-                                    <input asp-for="Address" readonly="readonly" type="text" class="form-control">
-                                    <a class="btn btn-danger" href="@Model.Address" target="_blank">Open Link</a>
-                                </div>
-                            </div>
-                            <div class="col-md-12 margin-top-30">
-                                <a class="btn btn-info" asp-controller="Files" asp-action="ViewFiles" asp-route-id="@Model.BucketId">Back to files</a>
+                <div class="box-content bordered danger">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Address"></label>
+                                <input value="@(Values.OssServerAddress)/download/fromsecret?sec=@Model.Address" readonly="readonly" type="text" class="form-control">
                             </div>
                         </div>
+                        <div class="col-md-12 margin-top-30">
+                            <a class="btn btn-success waves-effect waves-light" href="#" data-toggle="tooltip" data-trigger="click" title="copied!" data-clipboard-text="@(Values.OssServerAddress)/download/fromsecret?sec=@Model.Address">Copy link</a>
+                            <a class="btn btn-danger" href="@(Values.OssServerAddress)/download/fromsecret?sec=@Model.Address" target="_blank">Open Link</a>
+                            <a class="btn btn-info" asp-controller="Files" asp-action="ViewFiles" asp-route-id="@Model.BucketId">Back to files</a>
+                        </div>
                     </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+@section js{
+    <script src="@Values.CdnServerAddress/node_modules/clipboard/dist/clipboard.min.js"></script>
+    <script>
+        new Clipboard('.btn');
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+}
