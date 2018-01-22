@@ -18,5 +18,6 @@ namespace Aiursoft.Developer.Models.FilesViewModels
         public virtual int BucketId { get; set; }
         public IEnumerable<OSSFile> AllFiles { get; set; }
         public virtual string AppId { get; set; }
+        public virtual bool OpenToRead { get; set; }
     }
 }

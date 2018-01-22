@@ -42,13 +42,24 @@
                                 <td width="25%">@file.RealFileName</td>
                                 <td width="10%">@string.Format("{0:N}", Math.Round(d: (decimal)file.JFileSize / 1024, decimals: 2))</td>
                                 <td width="5%">@file.DownloadTimes</td>
-                                <td width="35%">
-                                    <div class="btn-group">
-                                        <a class="btn btn-warning waves-effect waves-light" href="@file.GetInternetPath?sd=true" target="_blank">Download</a>
-                                        <a class="btn btn-info waves-effect waves-light" href="@file.GetInternetPath" target="_blank">Open</a>
-                                        <a class="btn btn-success waves-effect waves-light" href="#" data-toggle="tooltip" data-trigger="click" title="copied!" data-clipboard-text="@file.GetInternetPath">Copy link</a>
-                                    </div>
-                                </td>
+                                @if (Model.OpenToRead)
+                                {
+                                    <td width="35%">
+                                        <div class="btn-group">
+                                            <a class="btn btn-warning waves-effect waves-light" href="@file.GetInternetPath?sd=true" target="_blank">Download</a>
+                                            <a class="btn btn-info waves-effect waves-light" href="@file.GetInternetPath" target="_blank">Open</a>
+                                            <a class="btn btn-success waves-effect waves-light" href="#" data-toggle="tooltip" data-trigger="click" title="copied!" data-clipboard-text="@file.GetInternetPath">Copy link</a>
+                                        </div>
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td width="35%">
+                                        <div class="btn-group">
+                                            <a class="btn btn-warning waves-effect waves-light" asp-controller="Files" asp-action="GenerateLink" asp-route-id="@file.FileKey">Generate Link</a>
+                                        </div>
+                                    </td>
+                                }
                                 <td><a class="btn btn-danger waves-effect waves-light" asp-controller="Files" asp-action="DeleteFile" asp-route-id="@file.FileKey">Delete</a></td>
                                 <td><a class="btn btn-warning  waves-light" href="#">Rename</a></td>
                             </tr>
