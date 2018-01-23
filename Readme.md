@@ -42,21 +42,6 @@ If you have IIS installed already, just config the web path to:
 
     .\bin\Debug\netcoreapp2.0\publish
 
-## What is stored in its database
-
-API app is the core authentication gateway for all aiursoft web apps.
-
-API app is also the core profile management system for users.
-
-API app also managements users preferred language.
-
-It stored:
-
-1. All users' basic profile for Aiursoft.
-2. Access tokens for all apps developed within Aiursoft.
-3. OAuth history and auth codes.
-4. App grant history and details.
-
 ## What is the relationship with other Aiursoft apps
 
 For all apps' information is stored in the developer project, it requires the developer project is well configured.
