@@ -52,14 +52,11 @@
                                         </div>
                                     </td>
                                 }
-                                else
-                                {
-                                    <td width="35%">
-                                        <div class="btn-group">
-                                            <a class="btn btn-warning waves-effect waves-light" asp-controller="Files" asp-action="GenerateLink" asp-route-id="@file.FileKey">Generate Link</a>
-                                        </div>
-                                    </td>
-                                }
+                                <td width="35%">
+                                    <div class="btn-group">
+                                        <a class="btn btn-warning waves-effect waves-light" asp-controller="Files" asp-action="GenerateLink" asp-route-id="@file.FileKey">Generate Link</a>
+                                    </div>
+                                </td>
                                 <td><a class="btn btn-danger waves-effect waves-light" asp-controller="Files" asp-action="DeleteFile" asp-route-id="@file.FileKey">Delete</a></td>
                                 <td><a class="btn btn-warning  waves-light" href="#">Rename</a></td>
                             </tr>
