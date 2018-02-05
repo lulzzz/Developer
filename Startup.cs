@@ -37,7 +37,9 @@ namespace Aiursoft.Developer
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.ConnectToAiursoftDatabase<DeveloperDbContext>("Developer", IsDevelopment);
+            services.AddDbContext<DeveloperDbContext>(options =>
+                options.UseMySql(Configuration.GetConnectionString("DatabaseConnection")));
+
             services.AddIdentity<DeveloperUser, IdentityRole>()
                 .AddEntityFrameworkStores<DeveloperDbContext>()
                 .AddDefaultTokenProviders();
