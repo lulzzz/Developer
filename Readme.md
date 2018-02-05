@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/AiursoftWeb/Developer.svg?branch=master)](https://travis-ci.org/AiursoftWeb/Developer)
 
-The developer center and also the app management center for aiursoft.# Aiursoft API
+The developer center and also the app management center for aiursoft.
 
 ## How to run
 
