@@ -39,7 +39,7 @@ namespace Aiursoft.Developer
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<DeveloperDbContext>(options =>
-                options.UseMySql(Configuration.GetConnectionString("DatabaseConnection")));
+                options.UseSqlServer(Configuration.GetConnectionString("DatabaseConnection")));
 
             services.AddIdentity<DeveloperUser, IdentityRole>()
                 .AddEntityFrameworkStores<DeveloperDbContext>()
@@ -53,10 +53,6 @@ namespace Aiursoft.Developer
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, DeveloperDbContext dbContext)
         {
-            app.UseForwardedHeaders(new ForwardedHeadersOptions
-            {
-                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
-            });
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
