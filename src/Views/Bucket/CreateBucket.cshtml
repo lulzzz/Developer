@@ -35,12 +35,14 @@
                             <div class="form-group">
                                 <label asp-for="AppId"></label>
                                 <select asp-for="AppId" class="form-control" asp-items="@ViewBag.PartId"></select>
+                                <span asp-validation-for="AppId" class="text-danger"></span>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label asp-for="NewBucketName"></label>
                                 <input asp-for="NewBucketName" type="text" class="form-control" placeholder="Enter your new bucket name...">
+                                <span asp-validation-for="NewBucketName" class="text-danger"></span>
                             </div>
                         </div>
                         <div class="col-md-12">
