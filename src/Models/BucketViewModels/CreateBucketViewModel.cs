@@ -35,6 +35,7 @@ namespace Aiursoft.Developer.Models.BucketViewModels
         [MinLength(5)]
         [Required]
         [NoSpace]
+        [NoDot]
         public string NewBucketName { get; set; }
         public bool ModelStateValid { get; set; } = true;
         [Display(Name = "Open To Read")]
