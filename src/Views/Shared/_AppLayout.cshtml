@@ -50,22 +50,28 @@
                         <span class="nav-link-text">Buckets</span>
                     </a>
                 </li>
-                <li class="nav-item @(Model.ActivePanel == 3 ? " active":string.Empty)" data-toggle="tooltip" data-placement="right" title="Buckets">
+                <li class="nav-item @(Model.ActivePanel == 3 ? " active":string.Empty)" data-toggle="tooltip" data-placement="right" title="Files">
                     <a class="nav-link" asp-controller="Files" asp-action="Index">
                         <i class="fa fa-fw fa-file"></i>
                         <span class="nav-link-text">Files</span>
                     </a>
                 </li>
-                <li class="nav-item @(Model.ActivePanel == 4 ? " active":string.Empty)" data-toggle="tooltip" data-placement="right" title="Buckets">
+                <li class="nav-item @(Model.ActivePanel == 4 ? " active":string.Empty)" data-toggle="tooltip" data-placement="right" title="Stargate">
                     <a class="nav-link" asp-controller="Files" asp-action="Index">
                         <i class="fa fa-fw fa-random"></i>
-                        <span class="nav-link-text">Message Queue</span>
+                        <span class="nav-link-text">Stargate</span>
                     </a>
                 </li>
-                <li class="nav-item @(Model.ActivePanel == 5 ? "active":string.Empty)" data-toggle="tooltip" data-placement="right" title="Buckets">
+                <li class="nav-item @(Model.ActivePanel == 5 ? " active":string.Empty)" data-toggle="tooltip" data-placement="right" title="Content Management">
                     <a class="nav-link" asp-controller="Files" asp-action="Index">
                         <i class="fa fa-fw fa-quora"></i>
                         <span class="nav-link-text">Content Management</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Wiki">
+                    <a class="nav-link" asp-controller="Files" asp-action="Index">
+                        <i class="fa fa-fw fa-book"></i>
+                        <span class="nav-link-text">Read Doc</span>
                     </a>
                 </li>
             </ul>
