@@ -6,18 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>@Localizer[ViewData["Title"].ToString()] - @Localizer["Developer Center"]</title>
-
-    <environment names="Development">
-        <link href="@Values.CdnServerAddress/node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
-        <link href="@Values.CdnServerAddress/node_modules/font-awesome/css/font-awesome.css" rel="stylesheet">
-        <link href="@Values.CdnServerAddress/node_modules/dropify/dist/css/dropify.css" rel="stylesheet" />
-        <link href="@Values.CdnServerAddress/node_modules/datatables/media/css/jquery.dataTables.css" rel="stylesheet" />
-        <link href="@Values.CdnServerAddress/node_modules/startbootstrap-sb-admin/css/sb-admin.css" rel="stylesheet">
-        <link href="@Values.CdnServerAddress/css/dashboard.css" rel="stylesheet">
-    </environment>
-    <environment exclude="Development">
-        <link href="@Values.CdnServerAddress/dist/dashboard.min.css" rel="stylesheet" asp-append-version="true">
-    </environment>
+    <link href="@Values.CdnServerAddress/dist/AiurCore.min.css" rel="stylesheet">
+    <link href="@Values.CdnServerAddress/dist/AiurDashboard.min.css" rel="stylesheet">
     @RenderSection("css", required: false)
 </head>
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -204,22 +194,8 @@
                 </div>
             </div>
         </div>
-
-        <environment names="Development">
-            <script src="@Values.CdnServerAddress/node_modules/jquery/dist/jquery.js"></script>
-            <script src="@Values.CdnServerAddress/node_modules/popper.js/dist/umd/popper.min.js"></script>
-            <script src="@Values.CdnServerAddress/node_modules/bootstrap/dist/js/bootstrap.js"></script>
-            <script src="@Values.CdnServerAddress/node_modules/jquery.easing/jquery.easing.min.js"></script>
-            <script src="@Values.CdnServerAddress/node_modules/dropify/dist/js/dropify.js"></script>
-            <script src="@Values.CdnServerAddress/node_modules/datatables/media/js/jquery.dataTables.js"></script>
-            <script src="@Values.CdnServerAddress/node_modules/startbootstrap-sb-admin/js/sb-admin.js"></script>
-            <script src="@Values.CdnServerAddress/node_modules/jquery-validation/dist/jquery.validate.js"></script>
-            <script src="@Values.CdnServerAddress/node_modules/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
-            <script src="@Values.CdnServerAddress/js/dashboard.js"></script>
-        </environment>
-        <environment exclude="Development">
-            <script src="@Values.CdnServerAddress/dist/dashboard.min.js" asp-append-version="true"></script>
-        </environment>
+        <script src="@Values.CdnServerAddress/dist/AiurCore.min.js"></script>
+        <script src="@Values.CdnServerAddress/dist/AiurDashboard.min.js"></script>
         @RenderSection("js", required: false)
     </div>
 </body>
