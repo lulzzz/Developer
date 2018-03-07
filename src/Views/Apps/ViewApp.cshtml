@@ -269,3 +269,14 @@
         </div>
     </div>
 </div>
+@section css{
+    <link href="@Values.CdnServerAddress/node_modules/dropify/dist/css/dropify.css" rel="stylesheet">
+}
+@section js{
+    <script src="@Values.CdnServerAddress/node_modules/dropify/dist/js/dropify.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.dropify').dropify();
+        });
+    </script>
+}
