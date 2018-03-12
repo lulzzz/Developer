@@ -137,7 +137,7 @@ namespace Aiursoft.Developer.Controllers
         }
 
         [HttpPost]
-        [ContainsValidFile]
+        [ContainsValidFile("/Files/Index")]
         public async Task<IActionResult> UploadFile(UploadFileViewModel model)
         {
             var cuser = await GetCurrentUserAsync();
@@ -147,7 +147,7 @@ namespace Aiursoft.Developer.Controllers
                 model.ModelStateValid = false;
                 return View(model);
             }
-            if (Request.Form.Files.Count < 1 || Request.Form.Files.First().Length > 1024 * 1024 * 1024)
+            if (Request.Form.Files.Count < 1 || Request.Form.Files.First().Length > Values.MaxFileSize)
             {
                 model.Recover(cuser, 3);
                 ModelState.AddModelError(string.Empty, "Please upload a valid file!");
