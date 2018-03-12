@@ -31,11 +31,11 @@ namespace Aiursoft.Developer.Data
         {
             if (Permissions.Count() == 0)
             {
-                Permissions.Add(new Permission { PermissionId = 0, PermissionName = "View your basic identity info like ID and Email." });
-                Permissions.Add(new Permission { PermissionId = 1, PermissionName = "View your phone number." });
-                Permissions.Add(new Permission { PermissionId = 2, PermissionName = "Change your phone number." });
-                Permissions.Add(new Permission { PermissionId = 3, PermissionName = "Change your basic info like nickname." });
-                Permissions.Add(new Permission { PermissionId = 4, PermissionName = "Change your password with your old password." });
+                Permissions.Add(new Permission { PermissionName = "View your basic identity info like ID and Email." });
+                Permissions.Add(new Permission { PermissionName = "View your phone number." });
+                Permissions.Add(new Permission { PermissionName = "Change your phone number." });
+                Permissions.Add(new Permission { PermissionName = "Change your basic info like nickname." });
+                Permissions.Add(new Permission { PermissionName = "Change your password with your old password." });
             }
             SaveChanges();
         }
