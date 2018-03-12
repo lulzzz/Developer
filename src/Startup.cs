@@ -65,8 +65,9 @@ namespace Aiursoft.Developer
             app.UseAiursoftSupportedCultures();
             app.UseAiursoftAuthenticationFromConfiguration(Configuration, "Developer");
             app.UseStaticFiles();
-            app.UseAuthentication()
-            .UseMvcWithDefaultRoute();
+            app.UseAuthentication();
+            app.UseMvcWithDefaultRoute();
+            dbContext.Seed();
         }
     }
 }
