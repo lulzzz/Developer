@@ -79,7 +79,7 @@ namespace Aiursoft.Developer.Controllers
             }
             else
             {
-                iconPath = await StorageService.SaveToOSS(Request.Form.Files.First(), Values.AppsIconBucketId);
+                iconPath = await StorageService.SaveToOSS(Request.Form.Files.First(), Values.AppsIconBucketId, 365);
             }
 
             var _newApp = new App(cuser.Id, model.AppName, model.AppDescription, model.AppCategory, model.AppPlatform)
@@ -202,7 +202,7 @@ namespace Aiursoft.Developer.Controllers
         public async Task<IActionResult> ChangeIcon(string AppId)
         {
             var appExists = await _dbContext.Apps.FindAsync(AppId);
-            appExists.AppIconAddress = await StorageService.SaveToOSS(Request.Form.Files.First(), Values.AppsIconBucketId);
+            appExists.AppIconAddress = await StorageService.SaveToOSS(Request.Form.Files.First(), Values.AppsIconBucketId, 365);
             await _dbContext.SaveChangesAsync();
             return RedirectToAction(nameof(ViewApp), new { id = AppId, JustHaveUpdated = true });
         }

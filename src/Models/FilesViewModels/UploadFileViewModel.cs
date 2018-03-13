@@ -25,5 +25,9 @@ namespace Aiursoft.Developer.Models.FilesViewModels
         public virtual int BucketId { get; set; }
 
         public virtual bool ModelStateValid { get; set; } = true;
+        [Required]
+        [Range(1, 365)]
+        [Display(Name = "Alive Days")]
+        public virtual int AliveDays { get; set; }
     }
 }

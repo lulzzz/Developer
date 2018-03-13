@@ -157,7 +157,7 @@ namespace Aiursoft.Developer.Controllers
             var app = await _dbContext.Apps.FindAsync(model.AppId);
             string accessToken = await AppsContainer.AccessToken(app.AppId, app.AppSecret)();
             var file = Request.Form.Files.First();
-            await StorageService.SaveToOSS(file, model.BucketId, SaveFileOptions.SourceName, accessToken);
+            await StorageService.SaveToOSS(file, model.BucketId, model.AliveDays, SaveFileOptions.SourceName, accessToken);
             return RedirectToAction(nameof(ViewFiles), new { id = model.BucketId });
         }
 
