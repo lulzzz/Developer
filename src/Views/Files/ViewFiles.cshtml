@@ -29,8 +29,9 @@
                             <th>File Name</th>
                             <th>File Size(Kb)</th>
                             <th>Download Times</th>
-                            <th>Download</th>
-                            <th>Generate Link</th>
+                            <th class="hidden-md">Deadline</th>
+                            <th class="hidden-xs">Download</th>
+                            <th class="hidden-sm">Generate Link</th>
                             <th>Delete</th>
                             <th>Rename</th>
                         </tr>
@@ -39,13 +40,14 @@
                         @foreach (var file in Model.AllFiles)
                         {
                             <tr>
-                                <td width="10%">@file.FileKey</td>
-                                <td width="25%">@file.RealFileName</td>
-                                <td width="10%">@string.Format("{0:N}", Math.Round(d: (decimal)file.JFileSize / 1024, decimals: 2))</td>
-                                <td width="5%">@file.DownloadTimes</td>
+                                <td>@file.FileKey</td>
+                                <td>@file.RealFileName</td>
+                                <td>@string.Format("{0:N}", Math.Round(d: (decimal)file.JFileSize / 1024, decimals: 2))</td>
+                                <td>@file.DownloadTimes</td>
+                                <td class="hidden-md">@((file.UploadTime + new TimeSpan(file.AliveDays, 0, 0, 0)).ToShortDateString())</td>
                                 @if (Model.OpenToRead)
                                 {
-                                    <td width="35%">
+                                    <td class="hidden-xs" style="min-width:225px;">
                                         <div class="btn-group">
                                             <a class="btn btn-warning waves-effect waves-light" href="@file.GetInternetPath?sd=true" target="_blank">Download</a>
                                             <a class="btn btn-info waves-effect waves-light" href="@file.GetInternetPath" target="_blank">Open</a>
@@ -53,7 +55,7 @@
                                         </div>
                                     </td>
                                 }
-                                <td width="35%">
+                                <td class="hidden-sm">
                                     <div class="btn-group">
                                         <a class="btn btn-warning waves-effect waves-light" asp-controller="Files" asp-action="GenerateLink" asp-route-id="@file.FileKey">Generate Link</a>
                                     </div>
