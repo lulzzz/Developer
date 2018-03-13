@@ -16,6 +16,7 @@ namespace Aiursoft.Developer.Models.FilesViewModels
         public ViewFilesViewModel() { }
         public ViewFilesViewModel(DeveloperUser User) : base(User, 3) { }
         public virtual int BucketId { get; set; }
+        public virtual string BucketName { get; set; }
         public IEnumerable<OSSFile> AllFiles { get; set; }
         public virtual string AppId { get; set; }
         public virtual bool OpenToRead { get; set; }

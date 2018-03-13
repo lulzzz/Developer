@@ -56,7 +56,8 @@ namespace Aiursoft.Developer.Controllers
                 BucketId = files.BucketId,
                 AllFiles = files.AllFiles,
                 AppId = app.AppId,
-                OpenToRead = bucketInfo.OpenToRead
+                OpenToRead = bucketInfo.OpenToRead,
+                BucketName = bucketInfo.BucketName
             };
             return View(model);
         }
