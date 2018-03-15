@@ -13,7 +13,6 @@ using Aiursoft.Pylon.Models.Developer;
 
 namespace Aiursoft.Developer.Controllers
 {
-    [AiurRequireHttps]
     public class AuthController : AiurController
     {
         public readonly UserManager<DeveloperUser> _userManager;

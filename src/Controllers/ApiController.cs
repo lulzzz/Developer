@@ -15,7 +15,6 @@ using System.Threading.Tasks;
 
 namespace Aiursoft.Developer.Controllers
 {
-    [AiurRequireHttps]
     public class ApiController : AiurApiController
     {
         public readonly UserManager<DeveloperUser> _userManager;

@@ -24,16 +24,10 @@ namespace Aiursoft.Developer
     public class Startup
     {
         public IConfiguration Configuration { get; }
-        public bool IsDevelopment { get; set; }
 
         public Startup(IConfiguration configuration, IHostingEnvironment env)
         {
             Configuration = configuration;
-            IsDevelopment = env.IsDevelopment();
-            if (IsDevelopment)
-            {
-                Values.ForceRequestHttps = false;
-            }
         }
 
         public void ConfigureServices(IServiceCollection services)
@@ -61,6 +55,7 @@ namespace Aiursoft.Developer
             else
             {
                 app.UseExceptionHandler("/Home/Error");
+                app.UseEnforceHttps();
             }
             app.UseAiursoftSupportedCultures();
             app.UseAiursoftAuthenticationFromConfiguration(Configuration, "Developer");

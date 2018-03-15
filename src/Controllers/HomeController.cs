@@ -10,7 +10,6 @@ using Aiursoft.Pylon.Models;
 
 namespace Aiursoft.Developer.Controllers
 {
-    [AiurRequireHttps]
     public class HomeController : AiurController
     {
         public readonly SignInManager<DeveloperUser> _signInManager;
