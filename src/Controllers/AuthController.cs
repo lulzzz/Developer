@@ -13,7 +13,7 @@ using Aiursoft.Pylon.Models.Developer;
 
 namespace Aiursoft.Developer.Controllers
 {
-    public class AuthController : AiurController
+    public class AuthController : Controller
     {
         public readonly UserManager<DeveloperUser> _userManager;
         public readonly SignInManager<DeveloperUser> _signInManager;

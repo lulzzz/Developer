@@ -18,7 +18,7 @@ using System.Threading.Tasks;
 namespace Aiursoft.Developer.Controllers
 {
     [AiurForceAuth]
-    public class AppsController : AiurController
+    public class AppsController : Controller
     {
         private readonly UserManager<DeveloperUser> _userManager;
         private readonly SignInManager<DeveloperUser> _signInManager;

@@ -18,7 +18,7 @@ using Aiursoft.Pylon.Models.Developer;
 namespace Aiursoft.Developer.Controllers
 {
     [AiurForceAuth]
-    public class FilesController : AiurController
+    public class FilesController : Controller
     {
         public readonly UserManager<DeveloperUser> _userManager;
         public readonly SignInManager<DeveloperUser> _signInManager;

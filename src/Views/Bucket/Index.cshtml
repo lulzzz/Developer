@@ -41,13 +41,13 @@
                                 <td>@buc.FileCount</td>
                                 <td>
                                     <div class="switch success">
-                                        <input type="checkbox" checked="@buc.OpenToRead" readonly="readonly">
+                                        <input type="checkbox" asp-for="@buc.OpenToRead" readonly="readonly">
                                         <label></label>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="switch warning">
-                                        <input type="checkbox" checked="@buc.OpenToUpload" readonly="readonly">
+                                        <input type="checkbox" asp-for="@buc.OpenToUpload" readonly="readonly">
                                         <label></label>
                                     </div>
                                 </td>

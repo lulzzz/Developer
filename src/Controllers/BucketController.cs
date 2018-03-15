@@ -21,7 +21,7 @@ using System.Threading.Tasks;
 namespace Aiursoft.Developer.Controllers
 {
     [AiurForceAuth]
-    public class BucketController : AiurController
+    public class BucketController : Controller
     {
         private readonly UserManager<DeveloperUser> _userManager;
         private readonly SignInManager<DeveloperUser> _signInManager;
