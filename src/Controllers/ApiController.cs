@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace Aiursoft.Developer.Controllers
 {
-    public class ApiController : AiurApiController
+    public class ApiController : Controller
     {
         public readonly UserManager<DeveloperUser> _userManager;
         public readonly SignInManager<DeveloperUser> _signInManager;

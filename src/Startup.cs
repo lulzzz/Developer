@@ -61,6 +61,7 @@ namespace Aiursoft.Developer
             app.UseAiursoftAuthenticationFromConfiguration(Configuration, "Developer");
             app.UseStaticFiles();
             app.UseAuthentication();
+            app.UseLanguageSwitcher();
             app.UseMvcWithDefaultRoute();
             dbContext.Seed();
         }
