@@ -197,9 +197,13 @@ namespace Aiursoft.Developer.Controllers
         }
 
         [HttpPost]
-        [ContainsValidFile("/Apps/AllApps")]
+        [ContainsValidFile]
         public async Task<IActionResult> ChangeIcon(string AppId)
         {
+            if(!ModelState.IsValid)
+            {
+                return RedirectToAction(nameof(ViewApp), new { id = AppId, JustHaveUpdated = true });
+            }
             var appExists = await _dbContext.Apps.FindAsync(AppId);
             appExists.AppIconAddress = await StorageService.SaveToOSS(Request.Form.Files.First(), Values.AppsIconBucketId, 365);
             await _dbContext.SaveChangesAsync();
