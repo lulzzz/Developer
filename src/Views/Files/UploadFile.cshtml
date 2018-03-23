@@ -40,7 +40,7 @@
                         <span asp-validation-for="AliveDays" class="text-danger"></span>
                     </div>
                     <div class="margin-top-30">
-                        <button type="submit" class="btn btn-primary">Upload</button>
+                        <button type="submit" data-disable-with="Uploading..." class="btn btn-primary">Upload</button>
                         <a class="btn btn-info" asp-controller="Files" asp-action="ViewFiles" asp-route-id="@Model.BucketId">Back to files</a>
                     </div>
                 </form>

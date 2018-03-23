@@ -98,7 +98,7 @@
                                 <input asp-for="LicenseUrl" type="url" class="form-control">
                                 <span asp-validation-for="LicenseUrl" class="text-danger"></span>
                             </div>
-                            <button type="submit" class="btn btn-primary">Update Profile</button>
+                            <button type="submit" data-disable-with="Saving..." class="btn btn-primary">Save</button>
                             <a class="btn btn-info" asp-controller="Apps" asp-action="AllApps">Back to List</a>
                             <a class="btn btn-danger" asp-controller="Apps" asp-action="DeleteApp" asp-route-id="@Model.AppId">Delete App</a>
                         </div>
@@ -120,7 +120,7 @@
                             </label>
                         </div>
                     }
-                    <input class="btn btn-success" id="btn-search" type="submit" value="Save" />
+                    <input class="btn btn-success" data-disable-with="Saving..." id="btn-search" type="submit" value="Save" />
                 </div>
             </div>
             <div class="card mb-3">
@@ -178,7 +178,7 @@
                         <input asp-for="AppDomain" type="text" class="form-control" placeholder="Enter your valid app domain. For example: google.com">
                         <span asp-validation-for="AppDomain" class="text-danger"></span>
                     </div>
-                    <button type="submit" class="btn btn-primary">Update OAuth Settings</button>
+                    <button type="submit" data-disable-with="Saving..." class="btn btn-primary">Save OAuth Settings</button>
                     <a class="btn btn-info" asp-controller="Apps" asp-action="AllApps">Back to list</a>
                 </div>
             </div>
@@ -197,7 +197,7 @@
                             <label>Upload your app icon</label>
                             <input type="file" name="file" class="dropify" data-max-file-size="2M" data-max-height="2000" data-max-weight="3000" data-allowed-file-extensions="png jpg bmp" data-default-file="@Model.AppIconAddress" />
                             <p class="small text-muted">Only jpg, bmp, png images, 2M max, 2000px max height and 3000px max weithg.</p>
-                            <button type="submit" class="btn btn-primary">Save Image</button>
+                            <button type="submit" data-disable-with="Saving..." class="btn btn-primary">Save Image</button>
                         </form>
                     </div>
                 </div>

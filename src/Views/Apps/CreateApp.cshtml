@@ -75,7 +75,7 @@
                         <input type="file" name="file" class="dropify" data-max-file-size="2M" data-max-height="2000" data-max-weight="3000" data-allowed-file-extensions="png jpg bmp" data-default-file="/images/appdefaulticon.png" />
                         <p class="small text-muted">Only jpg, bmp, png images, 2M max, 2000px max height and 3000px max weithg.</p>
 
-                        <button type="submit" class="btn btn-primary mt-3">Create</button>
+                        <button type="submit" data-disable-with="Creating..." class="btn btn-primary mt-3">Create</button>
                         <button type="reset" class="btn btn-danger mt-3">Clear</button>
                         <a class="btn btn-info mt-3" asp-controller="Apps" asp-action="AllApps">Back to list</a>
                     </form>
