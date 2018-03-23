@@ -88,11 +88,17 @@ namespace Aiursoft.Developer.Models.AppsViewModels
         [Display(Name = "App Domain")]
         public virtual string AppDomain { get; set; }
         // Permissions
+        [Display(Name = "View open Id")]
         public bool ViewOpenId { get; set; } = true;
+        [Display(Name = "View phone number")]
         public bool ViewPhoneNumber { get; set; }
+        [Display(Name = "Change phone number")]
         public bool ChangePhoneNumber { get; set; }
+        [Display(Name = "Change Email confirmation status")]
         public bool ConfirmEmail { get; set; }
+        [Display(Name = "Change basic info")]
         public bool ChangeBasicInfo { get; set; }
+        [Display(Name = "Change password")]
         public bool ChangePassword { get; set; }
 
         public IEnumerable<Bucket> Buckets { get; set; } //= new List<Bucket>();
