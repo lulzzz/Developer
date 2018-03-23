@@ -34,27 +34,8 @@ namespace Aiursoft.Developer.Models.AppsViewModels
             var buckets = await ApiService.ViewMyBucketsAsync(await token());
             Buckets = buckets.Buckets;
 
-            var grants = await Aiursoft.Pylon.Services.ToAPIServer.ApiService.AllUserGrantedAsync(await token());
+            var grants = await Pylon.Services.ToAPIServer.ApiService.AllUserGrantedAsync(await token());
             Grants = grants.Grants;
-
-            await _RecoverPermissions(_dbContext, ThisApp);
-        }
-
-        private async Task _RecoverPermissions(DeveloperDbContext _dbContext, App ThisApp)
-        {
-            var allPermissions = await _dbContext.Permissions.ToListAsync();
-            var currentPermissions = await _dbContext.AppPermissions.Where(t => t.AppId == ThisApp.AppId).ToListAsync();
-            var viewablePermissions = new List<ViewAblePermission>();
-            foreach (var p in allPermissions)
-            {
-                viewablePermissions.Add(new ViewAblePermission()
-                {
-                    PermissionId = p.PermissionId,
-                    PermissionName = p.PermissionName,
-                    Permitted = currentPermissions.Exists(t => t.PermissionId == p.PermissionId)
-                });
-            }
-            this.ViewAblePermission = viewablePermissions;
         }
 
         private ViewAppViewModel(DeveloperUser User, App ThisApp) : base(User)
@@ -63,20 +44,26 @@ namespace Aiursoft.Developer.Models.AppsViewModels
             {
                 throw new InvalidOperationException("The app is not the user's app!");
             }
-            this.AppName = ThisApp.AppName;
-            this.AppDescription = ThisApp.AppDescription;
-            this.AppCategory = ThisApp.AppCategory;
-            this.AppPlatform = ThisApp.AppPlatform;
-            this.AppId = ThisApp.AppId;
-            this.AppSecret = ThisApp.AppSecret;
-            this.EnableOAuth = ThisApp.EnableOAuth;
-            this.ForceInputPassword = ThisApp.ForceInputPassword;
-            this.ForceConfirmation = ThisApp.ForceConfirmation;
-            this.DebugMode = ThisApp.DebugMode;
-            this.PrivacyStatementUrl = ThisApp.PrivacyStatementUrl;
-            this.LicenseUrl = ThisApp.LicenseUrl;
-            this.AppIconAddress = ThisApp.AppIconAddress;
-            this.AppDomain = ThisApp.AppDomain;
+            AppName = ThisApp.AppName;
+            AppDescription = ThisApp.AppDescription;
+            AppCategory = ThisApp.AppCategory;
+            AppPlatform = ThisApp.AppPlatform;
+            AppId = ThisApp.AppId;
+            AppSecret = ThisApp.AppSecret;
+            EnableOAuth = ThisApp.EnableOAuth;
+            ForceInputPassword = ThisApp.ForceInputPassword;
+            ForceConfirmation = ThisApp.ForceConfirmation;
+            DebugMode = ThisApp.DebugMode;
+            PrivacyStatementUrl = ThisApp.PrivacyStatementUrl;
+            LicenseUrl = ThisApp.LicenseUrl;
+            AppIconAddress = ThisApp.AppIconAddress;
+            AppDomain = ThisApp.AppDomain;
+            ViewOpenId = ThisApp.ViewOpenId;
+            ViewPhoneNumber = ThisApp.ViewPhoneNumber;
+            ChangePhoneNumber = ThisApp.ChangePhoneNumber;
+            ConfirmEmail = ThisApp.ConfirmEmail;
+            ChangeBasicInfo = ThisApp.ChangeBasicInfo;
+            ChangePassword = ThisApp.ChangePassword;
         }
 
         public virtual bool JustHaveUpdated { get; set; } = false;
@@ -100,6 +87,13 @@ namespace Aiursoft.Developer.Models.AppsViewModels
         public virtual bool DebugMode { get; set; }
         [Display(Name = "App Domain")]
         public virtual string AppDomain { get; set; }
+        // Permissions
+        public bool ViewOpenId { get; set; } = true;
+        public bool ViewPhoneNumber { get; set; }
+        public bool ChangePhoneNumber { get; set; }
+        public bool ConfirmEmail { get; set; }
+        public bool ChangeBasicInfo { get; set; }
+        public bool ChangePassword { get; set; }
 
         public IEnumerable<Bucket> Buckets { get; set; } //= new List<Bucket>();
         public IEnumerable<Grant> Grants { get; set; }

@@ -63,12 +63,6 @@ namespace Aiursoft.Developer.Controllers
             {
                 return Json(new AiurProtocal { message = "Wrong input.", code = ErrorType.InvalidInput });
             }
-            var permissions = await _dbContext
-                .AppPermissions
-                .Include(t => t.Permission)
-                .Where(t => t.AppId == model.AppId)
-                .ToListAsync();
-
             var target = await _dbContext
                 .Apps
                 .SingleOrDefaultAsync(t => t.AppId == model.AppId);
@@ -77,7 +71,6 @@ namespace Aiursoft.Developer.Controllers
             {
                 return Json(new AiurProtocal { message = "Not found.", code = ErrorType.NotFound });
             }
-            target.Permissions = permissions;
             return Json(new AppInfoViewModel
             {
                 message = "Successfully get target app info.",

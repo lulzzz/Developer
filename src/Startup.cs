@@ -63,7 +63,6 @@ namespace Aiursoft.Developer
             app.UseAuthentication();
             app.UseLanguageSwitcher();
             app.UseMvcWithDefaultRoute();
-            dbContext.Seed();
         }
     }
 }

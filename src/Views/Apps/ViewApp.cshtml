@@ -111,15 +111,36 @@
                     Permission Settings
                 </div>
                 <div class="card-body">
-                    @foreach (var p in Model.ViewAblePermission)
-                    {
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input type="checkbox" class="form-check-input" name="PermissionStatus@(p.PermissionId)" checked="@p.Permitted">
-                                @p.PermissionName
-                            </label>
-                        </div>
-                    }
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" asp-for="ViewPhoneNumber" />
+                            <label asp-for="ViewPhoneNumber"></label>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" asp-for="ChangePhoneNumber" />
+                            <label asp-for="ChangePhoneNumber"></label>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" asp-for="ConfirmEmail" />
+                            <label asp-for="ConfirmEmail"></label>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" asp-for="ChangeBasicInfo" />
+                            <label asp-for="ChangeBasicInfo"></label>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" asp-for="ChangePassword" />
+                            <label asp-for="ChangePassword"></label>
+                        </label>
+                    </div>
                     <input class="btn btn-success" data-disable-with="Saving..." id="btn-search" type="submit" value="Save" />
                 </div>
             </div>

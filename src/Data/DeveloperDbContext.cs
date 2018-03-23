@@ -19,25 +19,10 @@ namespace Aiursoft.Developer.Data
         }
 
         public DbSet<App> Apps { get; set; }
-        public DbSet<AppPermission> AppPermissions { get; set; }
-        public DbSet<Permission> Permissions { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-        }
-
-        public void Seed()
-        {
-            if (Permissions.Count() == 0)
-            {
-                Permissions.Add(new Permission { PermissionName = "View your basic identity info like ID and Email." });
-                Permissions.Add(new Permission { PermissionName = "View your phone number." });
-                Permissions.Add(new Permission { PermissionName = "Change your phone number." });
-                Permissions.Add(new Permission { PermissionName = "Change your basic info like nickname." });
-                Permissions.Add(new Permission { PermissionName = "Change your password with your old password." });
-            }
-            SaveChanges();
         }
     }
 }

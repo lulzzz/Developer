@@ -12,9 +12,10 @@ using System;
 namespace Aiursoft.Developer.Migrations
 {
     [DbContext(typeof(DeveloperDbContext))]
-    partial class DeveloperDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180323065132_UsingPropertyForPermissions")]
+    partial class UsingPropertyForPermissions
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -132,19 +132,20 @@ namespace Aiursoft.Developer.Controllers
             target.PrivacyStatementUrl = model.PrivacyStatementUrl;
             target.LicenseUrl = model.LicenseUrl;
             target.AppDomain = model.AppDomain;
-            _dbContext.AppPermissions.Delete(t => t.AppId == target.AppId);
-            foreach (var key in HttpContext.Request.Form.Keys)
-            {
-                if (key.StartsWith("PermissionStatus") && HttpContext.Request.Form[key] == "on")
-                {
-                    var pId = Convert.ToInt32(key.Substring("PermissionStatus".Length));
-                    _dbContext.AppPermissions.Add(new AppPermission
-                    {
-                        AppId = target.AppId,
-                        PermissionId = pId
-                    });
-                }
-            }
+
+            //_dbContext.AppPermissions.Delete(t => t.AppId == target.AppId);
+            //foreach (var key in HttpContext.Request.Form.Keys)
+            //{
+            //    if (key.StartsWith("PermissionStatus") && HttpContext.Request.Form[key] == "on")
+            //    {
+            //        var pId = Convert.ToInt32(key.Substring("PermissionStatus".Length));
+            //        _dbContext.AppPermissions.Add(new AppPermission
+            //        {
+            //            AppId = target.AppId,
+            //            PermissionId = pId
+            //        });
+            //    }
+            //}
             await _dbContext.SaveChangesAsync();
             return RedirectToAction(nameof(ViewApp), new { id = target.AppId, JustHaveUpdated = true });
         }
@@ -185,7 +186,6 @@ namespace Aiursoft.Developer.Controllers
             }
             await ApiService.DeleteAppAsync(await AppsContainer.AccessToken(target.AppId, target.AppSecret)(), target.AppId);
             _dbContext.Apps.Remove(target);
-            _dbContext.AppPermissions.Delete(t => t.AppId == target.AppId);
             await _dbContext.SaveChangesAsync();
             return RedirectToAction(nameof(AllApps));
 
