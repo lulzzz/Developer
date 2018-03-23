@@ -132,7 +132,12 @@ namespace Aiursoft.Developer.Controllers
             target.PrivacyStatementUrl = model.PrivacyStatementUrl;
             target.LicenseUrl = model.LicenseUrl;
             target.AppDomain = model.AppDomain;
-
+            target.ViewOpenId = model.ViewOpenId;
+            target.ViewPhoneNumber = model.ViewPhoneNumber;
+            target.ChangePhoneNumber = model.ChangePhoneNumber;
+            target.ConfirmEmail = model.ConfirmEmail;
+            target.ChangeBasicInfo = model.ChangeBasicInfo;
+            target.ChangePassword = model.ChangePassword;
             //_dbContext.AppPermissions.Delete(t => t.AppId == target.AppId);
             //foreach (var key in HttpContext.Request.Form.Keys)
             //{
