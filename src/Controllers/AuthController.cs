@@ -15,18 +15,11 @@ namespace Aiursoft.Developer.Controllers
 {
     public class AuthController : Controller
     {
-        public readonly UserManager<DeveloperUser> _userManager;
-        public readonly SignInManager<DeveloperUser> _signInManager;
-        public readonly DeveloperDbContext _dbContext;
-
+        private readonly AuthService<DeveloperUser> _authService;
         public AuthController(
-            UserManager<DeveloperUser> userManager,
-            SignInManager<DeveloperUser> signInManager,
-            DeveloperDbContext _context)
+            AuthService<DeveloperUser> authService)
         {
-            _userManager = userManager;
-            _signInManager = signInManager;
-            _dbContext = _context;
+            _authService = authService;
         }
 
         [AiurForceAuth(preferController: "", preferAction: "", justTry: false, register: false)]
@@ -34,7 +27,6 @@ namespace Aiursoft.Developer.Controllers
         {
             throw new NotImplementedException();
         }
-
         [AiurForceAuth(preferController: "", preferAction: "", justTry: false, register: true)]
         public IActionResult GoRegister()
         {
@@ -43,7 +35,8 @@ namespace Aiursoft.Developer.Controllers
 
         public async Task<IActionResult> AuthResult(AuthResultAddressModel model)
         {
-            await AuthProcess.AuthApp(this, model, _userManager, _signInManager);
+            var user = await _authService.AuthApp(model);
+            this.SetClientLang(user.PreferedLanguage);
             return Redirect(model.state);
         }
     }

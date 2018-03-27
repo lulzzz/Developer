@@ -23,7 +23,7 @@ namespace Aiursoft.Developer.Controllers
             _logger = loggerFactory.CreateLogger<HomeController>();
         }
 
-        [AiurForceAuth("", "", justTry: true)]
+        [AiurForceAuth("Apps", "Index", justTry: true)]
         public IActionResult Index()
         {
             return View();

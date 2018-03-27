@@ -18,6 +18,7 @@ using Microsoft.AspNetCore.Mvc.Razor;
 using System.Globalization;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.HttpOverrides;
+using Aiursoft.Pylon.Services;
 
 namespace Aiursoft.Developer
 {
@@ -40,7 +41,7 @@ namespace Aiursoft.Developer
                 .AddDefaultTokenProviders();
 
             services.AddLocalization(options => options.ResourcesPath = "Resources");
-
+            services.AddTransient<AuthService<DeveloperUser>>();
             services.AddMvc()
                 .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix);
         }
