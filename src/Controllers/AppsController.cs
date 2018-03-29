@@ -138,19 +138,6 @@ namespace Aiursoft.Developer.Controllers
             target.ConfirmEmail = model.ConfirmEmail;
             target.ChangeBasicInfo = model.ChangeBasicInfo;
             target.ChangePassword = model.ChangePassword;
-            //_dbContext.AppPermissions.Delete(t => t.AppId == target.AppId);
-            //foreach (var key in HttpContext.Request.Form.Keys)
-            //{
-            //    if (key.StartsWith("PermissionStatus") && HttpContext.Request.Form[key] == "on")
-            //    {
-            //        var pId = Convert.ToInt32(key.Substring("PermissionStatus".Length));
-            //        _dbContext.AppPermissions.Add(new AppPermission
-            //        {
-            //            AppId = target.AppId,
-            //            PermissionId = pId
-            //        });
-            //    }
-            //}
             await _dbContext.SaveChangesAsync();
             return RedirectToAction(nameof(ViewApp), new { id = target.AppId, JustHaveUpdated = true });
         }
